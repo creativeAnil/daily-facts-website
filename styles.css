@@ -160,24 +160,26 @@ textarea {
 
   align-items: center;
 
-  gap: 10px;
+  gap: 11px;
 
   color: var(--text);
 
   text-decoration: none;
 
-  font-size: 16px;
+  font-size: 17px;
 
   font-weight: 800;
 }
 
 .brand img {
-  width: 38px;
-  height: 38px;
+  width: 48px;
+  height: 48px;
 
   display: block;
 
-  border-radius: 11px;
+  border-radius: 13px;
+
+  object-fit: cover;
 }
 
 .top-actions {
@@ -256,7 +258,7 @@ textarea {
 
 
 /* =================================
-   HERO - DESKTOP
+   HERO
    ================================= */
 
 .hero {
@@ -264,7 +266,7 @@ textarea {
 
   min-height:
     calc(
-      100vh - 92px
+      100vh - 100px
     );
 
   display: grid;
@@ -278,7 +280,7 @@ textarea {
   align-items: center;
 
   padding:
-    20px 0 45px;
+    18px 0 42px;
 }
 
 
@@ -300,7 +302,7 @@ textarea {
   padding:
     8px 12px;
 
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 
   border:
     1px solid
@@ -339,26 +341,44 @@ textarea {
     rgba(34, 197, 94, 0.1);
 }
 
+
+/* IMPORTANT:
+   Safer Devanagari sizing and line height.
+*/
+
 h1 {
   margin: 0;
 
+  max-width: 620px;
+
+  font-family:
+    "Noto Sans Devanagari",
+    "Nirmala UI",
+    "Mangal",
+    system-ui,
+    sans-serif;
+
   font-size:
     clamp(
-      58px,
-      5vw,
-      74px
+      52px,
+      4.4vw,
+      66px
     );
 
-  line-height: 1.03;
+  line-height: 1.22;
 
   letter-spacing:
-    -0.052em;
+    -0.035em;
 
   font-weight: 850;
+
+  overflow: visible;
 }
 
 h1 strong {
   display: block;
+
+  margin-top: 2px;
 
   font-weight: 850;
 
@@ -383,7 +403,7 @@ h1 strong {
   max-width: 550px;
 
   margin:
-    21px 0 0;
+    20px 0 0;
 
   color:
     var(--muted);
@@ -405,7 +425,7 @@ h1 strong {
 
   gap: 11px;
 
-  margin-top: 26px;
+  margin-top: 25px;
 }
 
 .download-button,
@@ -854,7 +874,7 @@ h1 strong {
 
 
 /* =================================
-   DYNAMIC SLIDER DOTS
+   SLIDER DOTS
    ================================= */
 
 .slider-dots {
@@ -878,7 +898,8 @@ h1 strong {
 
   max-width: 220px;
 
-  padding: 5px 8px;
+  padding:
+    5px 8px;
 
   border-radius: 999px;
 
@@ -1436,17 +1457,33 @@ footer a:hover {
       500px;
 
     gap:
-      110px;
+      105px;
   }
 
   .hero-copy {
     max-width:
-      690px;
+      700px;
+  }
+
+  .brand {
+    font-size:
+      18px;
+  }
+
+  .brand img {
+    width:
+      50px;
+
+    height:
+      50px;
+
+    border-radius:
+      14px;
   }
 
   h1 {
     font-size:
-      76px;
+      68px;
   }
 
   .description {
@@ -1502,6 +1539,22 @@ footer a:hover {
       285px;
   }
 
+  .brand img {
+    width:
+      44px;
+
+    height:
+      44px;
+  }
+
+  h1 {
+    font-size:
+      54px;
+
+    line-height:
+      1.2;
+  }
+
   .floating-top {
     left:
       -5px;
@@ -1531,6 +1584,27 @@ footer a:hover {
   .page {
     width:
       calc(100% - 28px);
+  }
+
+  .topbar {
+    padding:
+      18px 0;
+  }
+
+  .brand {
+    font-size:
+      15px;
+  }
+
+  .brand img {
+    width:
+      36px;
+
+    height:
+      36px;
+
+    border-radius:
+      10px;
   }
 
   .hero {
@@ -1572,6 +1646,14 @@ footer a:hover {
 
     margin-right:
       auto;
+  }
+
+  h1 {
+    font-size:
+      46px;
+
+    line-height:
+      1.2;
   }
 
   .hero-buttons {
@@ -1651,9 +1733,20 @@ footer a:hover {
       10px;
   }
 
+  .brand img {
+    width:
+      34px;
+
+    height:
+      34px;
+  }
+
   h1 {
     font-size:
-      45px;
+      43px;
+
+    line-height:
+      1.2;
   }
 
   .description {
@@ -1761,9 +1854,6 @@ footer a:hover {
     padding:
       12px 0 17px;
   }
-
-
-  /* Review popup */
 
   .review-modal {
     max-height:
