@@ -169,55 +169,75 @@ textarea {
 
   align-items: center;
 
-  gap: 15px;
+  gap:
+    15px;
 
-  color: var(--text);
+  color:
+    var(--text);
 
-  text-decoration: none;
+  text-decoration:
+    none;
 
-  font-size: 24px;
+  font-size:
+    24px;
 
-  font-weight: 850;
+  font-weight:
+    850;
 
   letter-spacing:
     -0.035em;
 }
 
 .brand img {
-  width: 68px;
-  height: 68px;
+  width:
+    68px;
 
-  display: block;
+  height:
+    68px;
 
-  object-fit: cover;
+  display:
+    block;
 
-  border-radius: 17px;
+  object-fit:
+    cover;
+
+  border-radius:
+    17px;
 }
 
 .top-actions {
-  display: flex;
+  display:
+    flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  gap: 10px;
+  gap:
+    10px;
 }
 
 .top-review,
 .top-download {
-  min-height: 46px;
+  min-height:
+    46px;
 
   padding:
     0 19px;
 
-  border-radius: 999px;
+  border-radius:
+    999px;
 
-  font-size: 13px;
+  font-size:
+    13px;
 
-  font-weight: 750;
+  font-weight:
+    750;
 
-  cursor: pointer;
+  cursor:
+    pointer;
 
-  text-decoration: none;
+  text-decoration:
+    none;
 
   transition:
     transform 0.2s ease,
@@ -237,13 +257,17 @@ textarea {
 }
 
 .top-download {
-  display: inline-flex;
+  display:
+    inline-flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  justify-content: center;
+  justify-content:
+    center;
 
-  color: #fff;
+  color:
+    #fff;
 
   background:
     linear-gradient(
@@ -274,15 +298,18 @@ textarea {
       100vh - 88px
     );
 
-  display: grid;
+  display:
+    grid;
 
   grid-template-columns:
     minmax(0, 1fr)
     540px;
 
-  align-items: center;
+  align-items:
+    center;
 
-  gap: 100px;
+  gap:
+    100px;
 
   padding:
     26px 0 58px;
@@ -299,11 +326,14 @@ textarea {
    ================================= */
 
 .badge {
-  display: inline-flex;
+  display:
+    inline-flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  gap: 9px;
+  gap:
+    9px;
 
   padding:
     9px 14px;
@@ -334,14 +364,18 @@ textarea {
     850;
 
   letter-spacing:
-    .13em;
+    0.13em;
 }
 
 .badge span {
-  width: 7px;
-  height: 7px;
+  width:
+    7px;
 
-  border-radius: 50%;
+  height:
+    7px;
+
+  border-radius:
+    50%;
 
   background:
     var(--green);
@@ -354,13 +388,15 @@ textarea {
 
 /* =================================
    HERO HEADING
+   NO CROPPING
    ================================= */
 
 h1 {
-  margin: 0;
+  margin:
+    0;
 
   max-width:
-    730px;
+    760px;
 
   font-family:
     "Noto Sans Devanagari",
@@ -371,19 +407,25 @@ h1 {
 
   font-size:
     clamp(
-      60px,
-      5.3vw,
-      84px
+      58px,
+      5vw,
+      78px
     );
 
   line-height:
-    1.18;
+    1.42;
 
   letter-spacing:
-    -0.035em;
+    -0.025em;
 
   font-weight:
     850;
+
+  overflow:
+    visible;
+
+  padding:
+    0.06em 0 0.12em;
 }
 
 h1 strong {
@@ -391,17 +433,23 @@ h1 strong {
     block;
 
   margin-top:
-    3px;
+    0.02em;
+
+  padding:
+    0.02em 0 0.08em;
 
   font-weight:
     850;
 
+  line-height:
+    1.42;
+
   background:
     linear-gradient(
       90deg,
-      #111827,
+      #111827 0%,
       var(--blue) 58%,
-      var(--purple)
+      var(--purple) 100%
     );
 
   -webkit-background-clip:
@@ -412,6 +460,9 @@ h1 strong {
 
   color:
     transparent;
+
+  overflow:
+    visible;
 }
 
 .description {
@@ -474,8 +525,8 @@ h1 strong {
     none;
 
   transition:
-    transform .2s ease,
-    box-shadow .2s ease;
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .download-button {
@@ -565,7 +616,7 @@ h1 strong {
     11px;
 
   opacity:
-    .72;
+    0.72;
 }
 
 .review-button {
@@ -577,17 +628,17 @@ h1 strong {
 
   border:
     1px solid
-    rgba(245, 158, 11, .18);
+    rgba(245, 158, 11, 0.18);
 
   color:
     #475569;
 
   background:
-    rgba(255,255,255,.75);
+    rgba(255,255,255,0.75);
 
   box-shadow:
     0 12px 25px
-    rgba(15,23,42,.06);
+    rgba(15,23,42,0.06);
 }
 
 .review-button:hover {
@@ -596,7 +647,7 @@ h1 strong {
 
   box-shadow:
     0 16px 30px
-    rgba(15,23,42,.09);
+    rgba(15,23,42,0.09);
 }
 
 .review-icon {
@@ -1447,6 +1498,7 @@ h1 strong {
 .category-icon.science {
   color:
     #2563eb;
+
   background:
     #e8f0ff;
 }
@@ -1454,6 +1506,7 @@ h1 strong {
 .category-icon.history {
   color:
     #b45309;
+
   background:
     #fff0d8;
 }
@@ -1461,6 +1514,7 @@ h1 strong {
 .category-icon.nature {
   color:
     #16a34a;
+
   background:
     #eaf9ef;
 }
@@ -1468,6 +1522,7 @@ h1 strong {
 .category-icon.technology {
   color:
     #4f46e5;
+
   background:
     #efedff;
 }
@@ -1475,6 +1530,7 @@ h1 strong {
 .category-icon.space {
   color:
     #7c3aed;
+
   background:
     #f1eaff;
 }
@@ -1482,6 +1538,7 @@ h1 strong {
 .category-icon.body {
   color:
     #e11d48;
+
   background:
     #ffe9ee;
 }
@@ -1489,6 +1546,7 @@ h1 strong {
 .category-icon.animals {
   color:
     #ea580c;
+
   background:
     #fff0e6;
 }
@@ -1496,6 +1554,7 @@ h1 strong {
 .category-icon.psychology {
   color:
     #9333ea;
+
   background:
     #f5eaff;
 }
@@ -1503,6 +1562,7 @@ h1 strong {
 .category-icon.gaming {
   color:
     #0891b2;
+
   background:
     #e8faff;
 }
@@ -1510,6 +1570,7 @@ h1 strong {
 .category-icon.movies {
   color:
     #db2777;
+
   background:
     #ffeafa;
 }
@@ -1517,6 +1578,7 @@ h1 strong {
 .category-icon.entertainment {
   color:
     #d97706;
+
   background:
     #fff5df;
 }
@@ -1524,6 +1586,7 @@ h1 strong {
 .category-icon.general {
   color:
     #2563eb;
+
   background:
     #e9f0ff;
 }
@@ -1589,6 +1652,7 @@ h1 strong {
 .blue-bg {
   color:
     #2563eb;
+
   background:
     #e9f0ff;
 }
@@ -1596,6 +1660,7 @@ h1 strong {
 .green-bg {
   color:
     #16a34a;
+
   background:
     #eaf9ef;
 }
@@ -1603,6 +1668,7 @@ h1 strong {
 .orange-bg {
   color:
     #d97706;
+
   background:
     #fff4df;
 }
@@ -1610,6 +1676,7 @@ h1 strong {
 .red-bg {
   color:
     #e11d48;
+
   background:
     #ffe9ee;
 }
@@ -1962,13 +2029,6 @@ h1 strong {
 /* =================================
    FINAL DOWNLOAD
    ================================= */
-
-/*
-   Cleaner CTA:
-   removes the old oversized blue
-   outer container and uses one
-   polished download card.
-*/
 
 .download-section {
   padding:
@@ -2773,7 +2833,15 @@ footer {
       56px;
 
     line-height:
-      1.2;
+      1.38;
+
+    padding:
+      0.05em 0 0.10em;
+  }
+
+  h1 strong {
+    line-height:
+      1.38;
   }
 
   .phone {
@@ -2902,7 +2970,15 @@ footer {
       46px;
 
     line-height:
-      1.2;
+      1.38;
+
+    padding:
+      0.05em 0 0.10em;
+  }
+
+  h1 strong {
+    line-height:
+      1.38;
   }
 
   .description {
@@ -3063,7 +3139,15 @@ footer {
       43px;
 
     line-height:
-      1.2;
+      1.38;
+
+    padding:
+      0.05em 0 0.10em;
+  }
+
+  h1 strong {
+    line-height:
+      1.38;
   }
 
   .description {
