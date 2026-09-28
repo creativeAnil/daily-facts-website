@@ -33,14 +33,13 @@
 
 <body>
 
-  <!-- Background -->
-
   <div class="bg-orb orb-1"></div>
   <div class="bg-orb orb-2"></div>
   <div class="bg-grid"></div>
 
 
   <main class="page">
+
 
     <!-- ==============================
          TOP BAR
@@ -186,6 +185,17 @@
           </button>
 
         </div>
+
+
+        <!-- AUTO VERSION -->
+
+        <p class="version-info">
+          Latest version:
+          <strong id="versionNumber">
+            1.0.9
+          </strong>
+          · Android
+        </p>
 
 
         <!-- Feature pills -->
@@ -523,11 +533,6 @@
     let sliderTimer = null;
 
 
-    /*
-      Find every app-screen image inside
-      the GitHub assets folder.
-    */
-
     async function loadScreenshots() {
 
       try {
@@ -585,14 +590,15 @@
               return numberA - numberB;
 
             })
-            .map((file) => file.download_url);
+            .map(
+              (file) =>
+                file.download_url
+            );
 
 
-        /*
-          Safety fallback.
-        */
-
-        if (screenshots.length === 0) {
+        if (
+          screenshots.length === 0
+        ) {
 
           screenshots = [
             "assets/app-screen-1.jpg"
@@ -617,10 +623,6 @@
         );
 
 
-        /*
-          Fallback if GitHub API is temporarily unavailable.
-        */
-
         screenshots = [
           "assets/app-screen-1.jpg",
           "assets/app-screen-2.jpg",
@@ -634,6 +636,7 @@
           "assets/app-screen-10.jpg"
         ];
 
+
         createSliderDots();
 
         preloadScreenshots();
@@ -646,8 +649,6 @@
 
     }
 
-
-    /* Create dots automatically */
 
     function createSliderDots() {
 
@@ -700,8 +701,6 @@
     }
 
 
-    /* Preload images */
-
     function preloadScreenshots() {
 
       screenshots.forEach(
@@ -718,8 +717,6 @@
 
     }
 
-
-    /* Show slide */
 
     function showSlide(index) {
 
@@ -779,8 +776,6 @@
     }
 
 
-    /* Automatic slideshow */
-
     function startSlider() {
 
       clearInterval(
@@ -821,7 +816,7 @@
 
 
     /* ==================================
-       LATEST GITHUB APK
+       LATEST GITHUB RELEASE + APK
        ================================== */
 
     const releaseAPI =
@@ -834,7 +829,13 @@
       );
 
 
-    async function loadLatestAPK() {
+    const versionNumber =
+      document.getElementById(
+        "versionNumber"
+      );
+
+
+    async function loadLatestRelease() {
 
       try {
 
@@ -853,7 +854,7 @@
         if (!response.ok) {
 
           throw new Error(
-            "GitHub request failed"
+            "GitHub release request failed"
           );
 
         }
@@ -862,6 +863,37 @@
         const release =
           await response.json();
 
+
+        /* ------------------------------
+           Detect version
+           ------------------------------ */
+
+        let version =
+          release.tag_name ||
+          release.name ||
+          "1.0.9";
+
+
+        /*
+          Remove a leading "v".
+
+          v1.0.9 -> 1.0.9
+        */
+
+        version =
+          version.replace(
+            /^v/i,
+            ""
+          );
+
+
+        versionNumber.textContent =
+          version;
+
+
+        /* ------------------------------
+           Detect APK
+           ------------------------------ */
 
         const apk =
           release.assets.find(
@@ -882,16 +914,27 @@
       } catch (error) {
 
         console.error(
-          "Could not load latest APK:",
+          "Could not load latest release:",
           error
         );
+
+
+        /*
+          Fallback values.
+
+          Website still works if GitHub
+          API is temporarily unavailable.
+        */
+
+        versionNumber.textContent =
+          "1.0.9";
 
       }
 
     }
 
 
-    loadLatestAPK();
+    loadLatestRelease();
 
 
     /* ==================================
