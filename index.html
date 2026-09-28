@@ -2,11 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta
     name="theme-color"
@@ -33,15 +29,20 @@
 
 <body>
 
-  <div class="background-glow glow-one"></div>
-  <div class="background-glow glow-two"></div>
-  <div class="background-grid"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
 
   <main class="page">
 
+    <!-- TOP BAR -->
+
     <header class="topbar">
 
-      <a class="brand" href="#">
+      <a
+        class="brand"
+        href="#"
+      >
         <img
           src="assets/logo.png"
           alt="Daily Facts logo"
@@ -53,18 +54,18 @@
       <div class="top-actions">
 
         <button
-          class="top-review"
           id="openReviewTop"
+          class="top-review"
           type="button"
         >
           ★ Review
         </button>
 
         <a
-          class="top-download"
           href="#downloadButton"
+          class="top-download"
         >
-          Download
+          Download APK
         </a>
 
       </div>
@@ -72,38 +73,46 @@
     </header>
 
 
+    <!-- HERO -->
+
     <section class="hero">
+
+      <!-- LEFT -->
 
       <div class="hero-copy">
 
-        <div class="app-badge">
-          <span class="badge-dot"></span>
+        <div class="badge">
+          <span></span>
           ANDROID APP
         </div>
 
+
         <h1>
           हर दिन
-          <span>कुछ नया जानें</span>
+          <strong>कुछ नया जानें</strong>
         </h1>
 
-        <p class="lead">
+
+        <p class="description">
           Discover interesting facts about science, history,
-          nature, technology, space and much more.
+          nature, technology, human body, space and much more.
         </p>
 
 
-        <div class="actions">
+        <div class="hero-buttons">
 
           <a
             id="downloadButton"
-            class="download"
+            class="download-button"
             href="https://github.com/creativeAnil/daily-facts-content/releases/download/v1.0.9/daily-facts-v1.0.9.apk"
           >
 
-            <span class="download-icon">↓</span>
+            <span class="download-icon">
+              ↓
+            </span>
 
-            <span>
-              <strong>Download APK</strong>
+            <span class="download-text">
+              <b>Download APK</b>
               <small>Free for Android</small>
             </span>
 
@@ -111,15 +120,17 @@
 
 
           <button
-            class="review-button"
             id="openReview"
+            class="review-button"
             type="button"
           >
 
-            <span class="review-star">★</span>
+            <span class="review-icon">
+              ★
+            </span>
 
-            <span>
-              <strong>Rate & Review</strong>
+            <span class="review-text">
+              <b>Rate & Review</b>
               <small>Tell us what you think</small>
             </span>
 
@@ -128,20 +139,20 @@
         </div>
 
 
-        <div class="mini-points">
+        <div class="features">
 
-          <div class="mini-point">
-            <span class="point-icon">✦</span>
+          <div>
+            <span class="feature-icon blue">✦</span>
             <span>Interesting facts</span>
           </div>
 
-          <div class="mini-point">
-            <span class="point-icon">◈</span>
+          <div>
+            <span class="feature-icon green">◈</span>
             <span>Fresh discoveries</span>
           </div>
 
-          <div class="mini-point">
-            <span class="point-icon">✓</span>
+          <div>
+            <span class="feature-icon orange">✓</span>
             <span>Free to download</span>
           </div>
 
@@ -150,24 +161,40 @@
       </div>
 
 
-      <div class="hero-visual">
+      <!-- RIGHT -->
 
-        <div class="visual-halo halo-one"></div>
-        <div class="visual-halo halo-two"></div>
+      <div class="showcase">
 
-        <div class="floating-card card-top">
-          <span class="floating-icon">✦</span>
-          <span>Learn something new</span>
+        <div class="showcase-glow"></div>
+
+
+        <!-- Small card -->
+
+        <div class="floating-card floating-top">
+
+          <span class="floating-symbol">
+            ✦
+          </span>
+
+          <span>
+            Learn something new
+          </span>
+
         </div>
 
-        <div class="device-shadow"></div>
 
-        <div class="device">
+        <!-- Phone -->
 
-          <div class="device-screen">
+        <div class="phone-shadow"></div>
+
+        <div class="phone">
+
+          <div class="phone-notch"></div>
+
+          <div class="phone-screen">
 
             <img
-              id="appScreenshot"
+              id="mainScreenshot"
               src="assets/app-screen-1.jpg"
               alt="Daily Facts app screenshot"
             >
@@ -176,9 +203,58 @@
 
         </div>
 
-        <div class="floating-card card-bottom">
-          <span class="live-dot"></span>
-          <span>New fact every day</span>
+
+        <!-- Bottom floating card -->
+
+        <div class="floating-card floating-bottom">
+
+          <span class="online-dot"></span>
+
+          <span>
+            New fact every day
+          </span>
+
+        </div>
+
+
+        <!-- Carousel dots -->
+
+        <div
+          class="slider-dots"
+          id="sliderDots"
+        >
+
+          <button
+            type="button"
+            class="active"
+            data-slide="0"
+            aria-label="Screenshot 1"
+          ></button>
+
+          <button
+            type="button"
+            data-slide="1"
+            aria-label="Screenshot 2"
+          ></button>
+
+          <button
+            type="button"
+            data-slide="2"
+            aria-label="Screenshot 3"
+          ></button>
+
+          <button
+            type="button"
+            data-slide="3"
+            aria-label="Screenshot 4"
+          ></button>
+
+          <button
+            type="button"
+            data-slide="4"
+            aria-label="Screenshot 5"
+          ></button>
+
         </div>
 
       </div>
@@ -186,28 +262,28 @@
     </section>
 
 
-    <section class="bottom-section">
+    <!-- FOOTER -->
 
-      <div class="bottom-line"></div>
+    <footer>
 
-      <p>
-        Daily Facts
-      </p>
+      <span>
+        © <span id="year"></span> Daily Facts
+      </span>
 
       <a href="mailto:dailyfacts.support@gmail.com">
         Support
       </a>
 
-    </section>
+    </footer>
 
   </main>
 
 
-  <!-- Review Modal -->
+  <!-- REVIEW MODAL -->
 
   <div
-    class="review-overlay"
     id="reviewOverlay"
+    class="review-overlay"
     aria-hidden="true"
   >
 
@@ -219,18 +295,18 @@
     >
 
       <button
-        class="close-review"
         id="closeReview"
+        class="close-review"
         type="button"
-        aria-label="Close review"
+        aria-label="Close"
       >
         ×
       </button>
 
 
-      <div class="review-heading">
+      <div class="review-header">
 
-        <div class="review-big-icon">
+        <div class="review-logo">
           ★
         </div>
 
@@ -239,55 +315,50 @@
         </h2>
 
         <p>
-          We'd love to hear what you think.
+          We'd love to hear your feedback.
         </p>
 
       </div>
 
 
-      <div class="rating-area">
+      <div class="stars">
 
         <button
-          class="star-button"
+          type="button"
+          class="star"
           data-rating="1"
-          type="button"
-          aria-label="1 star"
         >
           ★
         </button>
 
         <button
-          class="star-button"
+          type="button"
+          class="star"
           data-rating="2"
-          type="button"
-          aria-label="2 stars"
         >
           ★
         </button>
 
         <button
-          class="star-button"
+          type="button"
+          class="star"
           data-rating="3"
-          type="button"
-          aria-label="3 stars"
         >
           ★
         </button>
 
         <button
-          class="star-button"
+          type="button"
+          class="star"
           data-rating="4"
-          type="button"
-          aria-label="4 stars"
         >
           ★
         </button>
 
         <button
-          class="star-button"
-          data-rating="5"
           type="button"
-          aria-label="5 stars"
+          class="star"
+          data-rating="5"
         >
           ★
         </button>
@@ -295,49 +366,41 @@
       </div>
 
 
-      <p
-        class="rating-text"
-        id="ratingText"
+      <div
+        id="ratingMessage"
+        class="rating-message"
       >
         Select a rating
-      </p>
+      </div>
 
 
-      <label
-        class="field-label"
-        for="reviewName"
-      >
-        Name <span>(optional)</span>
+      <label for="reviewName">
+        Name
+        <small>optional</small>
       </label>
 
       <input
         id="reviewName"
-        class="review-input"
         type="text"
-        placeholder="Your name"
         maxlength="60"
+        placeholder="Your name"
       >
 
 
-      <label
-        class="field-label"
-        for="reviewMessage"
-      >
+      <label for="reviewMessage">
         Review
       </label>
 
       <textarea
         id="reviewMessage"
-        class="review-textarea"
-        placeholder="Tell us about your experience..."
         maxlength="1000"
-        rows="5"
+        placeholder="Tell us about your experience..."
       ></textarea>
 
 
       <button
-        class="submit-review"
-        id="submitReview"
+        id="sendReview"
+        class="send-review"
         type="button"
       >
         Send Review
@@ -345,7 +408,7 @@
 
 
       <p class="review-note">
-        Your review will open in your email app before sending.
+        Your email app will open with your review prepared.
       </p>
 
     </div>
@@ -356,7 +419,15 @@
   <script>
 
     /* --------------------------------
-       Screenshot slideshow
+       YEAR
+       -------------------------------- */
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    /* --------------------------------
+       SCREENSHOT SLIDER
        -------------------------------- */
 
     const screenshots = [
@@ -367,11 +438,18 @@
       "assets/app-screen-5.jpg"
     ];
 
-    const screenshotImage =
-      document.getElementById("appScreenshot");
+    const mainScreenshot =
+      document.getElementById("mainScreenshot");
 
-    let screenshotIndex = 0;
+    const dots =
+      document.querySelectorAll(
+        "#sliderDots button"
+      );
 
+    let currentSlide = 0;
+
+
+    /* Preload */
 
     screenshots.forEach((src) => {
 
@@ -382,43 +460,109 @@
     });
 
 
-    setInterval(() => {
+    function showSlide(index) {
 
-      screenshotImage.classList.add("changing");
+      currentSlide = index;
+
+      mainScreenshot.classList.add(
+        "slide-out"
+      );
+
 
       setTimeout(() => {
 
-        screenshotIndex =
-          (screenshotIndex + 1) % screenshots.length;
+        mainScreenshot.src =
+          screenshots[currentSlide];
 
-        screenshotImage.src =
-          screenshots[screenshotIndex];
+        mainScreenshot.classList.remove(
+          "slide-out"
+        );
 
-        screenshotImage.classList.remove("changing");
+      }, 350);
 
-      }, 450);
 
-    }, 3200);
+      dots.forEach((dot, i) => {
+
+        dot.classList.toggle(
+          "active",
+          i === currentSlide
+        );
+
+      });
+
+    }
+
+
+    dots.forEach((dot) => {
+
+      dot.addEventListener(
+        "click",
+        () => {
+
+          const index =
+            Number(
+              dot.dataset.slide
+            );
+
+          showSlide(index);
+
+          resetSlider();
+
+        }
+      );
+
+    });
+
+
+    let sliderTimer;
+
+
+    function startSlider() {
+
+      sliderTimer =
+        setInterval(() => {
+
+          const next =
+            (currentSlide + 1) %
+            screenshots.length;
+
+          showSlide(next);
+
+        }, 3500);
+
+    }
+
+
+    function resetSlider() {
+
+      clearInterval(sliderTimer);
+
+      startSlider();
+
+    }
+
+
+    startSlider();
 
 
     /* --------------------------------
-       Latest GitHub APK
+       LATEST GITHUB APK
        -------------------------------- */
 
-    const latestReleaseApi =
+    const releaseAPI =
       "https://api.github.com/repos/creativeAnil/daily-facts-content/releases/latest";
 
     const downloadButton =
       document.getElementById("downloadButton");
 
 
-    async function updateDownloadButton() {
+    async function loadLatestAPK() {
 
       try {
 
         const response =
           await fetch(
-            latestReleaseApi,
+            releaseAPI,
             {
               headers: {
                 "Accept":
@@ -429,9 +573,11 @@
 
 
         if (!response.ok) {
+
           throw new Error(
-            "Unable to load latest release"
+            "GitHub request failed"
           );
+
         }
 
 
@@ -458,7 +604,7 @@
       } catch (error) {
 
         console.error(
-          "Latest release lookup failed:",
+          "Could not load latest APK:",
           error
         );
 
@@ -467,57 +613,39 @@
     }
 
 
-    updateDownloadButton();
+    loadLatestAPK();
 
 
     /* --------------------------------
-       Review modal
+       REVIEW MODAL
        -------------------------------- */
 
-    const reviewOverlay =
-      document.getElementById("reviewOverlay");
+    const overlay =
+      document.getElementById(
+        "reviewOverlay"
+      );
 
     const openReview =
-      document.getElementById("openReview");
+      document.getElementById(
+        "openReview"
+      );
 
     const openReviewTop =
-      document.getElementById("openReviewTop");
+      document.getElementById(
+        "openReviewTop"
+      );
 
     const closeReview =
-      document.getElementById("closeReview");
-
-    const submitReview =
-      document.getElementById("submitReview");
-
-    const ratingText =
-      document.getElementById("ratingText");
-
-    const reviewName =
-      document.getElementById("reviewName");
-
-    const reviewMessage =
-      document.getElementById("reviewMessage");
-
-    const starButtons =
-      document.querySelectorAll(".star-button");
-
-    let selectedRating = 0;
+      document.getElementById(
+        "closeReview"
+      );
 
 
-    const ratingLabels = {
-      1: "We’re sorry to hear that.",
-      2: "Thanks for the feedback.",
-      3: "Glad you gave us a try.",
-      4: "Great! We’re happy you like it.",
-      5: "Awesome! Thank you so much!"
-    };
+    function openReviewModal() {
 
+      overlay.classList.add("show");
 
-    function showReviewModal() {
-
-      reviewOverlay.classList.add("show");
-
-      reviewOverlay.setAttribute(
+      overlay.setAttribute(
         "aria-hidden",
         "false"
       );
@@ -529,11 +657,11 @@
     }
 
 
-    function hideReviewModal() {
+    function closeReviewModal() {
 
-      reviewOverlay.classList.remove("show");
+      overlay.classList.remove("show");
 
-      reviewOverlay.setAttribute(
+      overlay.setAttribute(
         "aria-hidden",
         "true"
       );
@@ -547,31 +675,31 @@
 
     openReview.addEventListener(
       "click",
-      showReviewModal
+      openReviewModal
     );
 
 
     openReviewTop.addEventListener(
       "click",
-      showReviewModal
+      openReviewModal
     );
 
 
     closeReview.addEventListener(
       "click",
-      hideReviewModal
+      closeReviewModal
     );
 
 
-    reviewOverlay.addEventListener(
+    overlay.addEventListener(
       "click",
       (event) => {
 
         if (
-          event.target === reviewOverlay
+          event.target === overlay
         ) {
 
-          hideReviewModal();
+          closeReviewModal();
 
         }
 
@@ -584,11 +712,10 @@
       (event) => {
 
         if (
-          event.key === "Escape" &&
-          reviewOverlay.classList.contains("show")
+          event.key === "Escape"
         ) {
 
-          hideReviewModal();
+          closeReviewModal();
 
         }
 
@@ -596,113 +723,158 @@
     );
 
 
-    starButtons.forEach(
-      (button) => {
+    /* --------------------------------
+       RATING
+       -------------------------------- */
 
-        button.addEventListener(
-          "click",
-          () => {
+    const stars =
+      document.querySelectorAll(
+        ".star"
+      );
 
-            selectedRating =
-              Number(
-                button.dataset.rating
-              );
+    const ratingMessage =
+      document.getElementById(
+        "ratingMessage"
+      );
 
 
-            starButtons.forEach(
-              (star) => {
+    let selectedRating = 0;
 
-                const rating =
-                  Number(
-                    star.dataset.rating
-                  );
 
-                star.classList.toggle(
-                  "selected",
-                  rating <= selectedRating
-                );
+    const ratingText = {
+      1: "We'll work to improve.",
+      2: "Thanks for the feedback.",
+      3: "Thanks for trying Daily Facts.",
+      4: "Great! We're glad you like it.",
+      5: "Awesome! Thank you."
+    };
 
-              }
+
+    stars.forEach((star) => {
+
+      star.addEventListener(
+        "click",
+        () => {
+
+          selectedRating =
+            Number(
+              star.dataset.rating
             );
 
 
-            ratingText.textContent =
-              ratingLabels[selectedRating];
+          stars.forEach(
+            (item) => {
+
+              const value =
+                Number(
+                  item.dataset.rating
+                );
+
+              item.classList.toggle(
+                "selected",
+                value <= selectedRating
+              );
+
+            }
+          );
+
+
+          ratingMessage.textContent =
+            ratingText[selectedRating];
+
+        }
+      );
+
+    });
+
+
+    /* --------------------------------
+       SEND REVIEW
+       -------------------------------- */
+
+    document
+      .getElementById("sendReview")
+      .addEventListener(
+        "click",
+        () => {
+
+          const name =
+            document
+              .getElementById("reviewName")
+              .value
+              .trim() ||
+            "Anonymous";
+
+
+          const message =
+            document
+              .getElementById("reviewMessage")
+              .value
+              .trim();
+
+
+          if (selectedRating === 0) {
+
+            ratingMessage.textContent =
+              "Please select a star rating.";
+
+            return;
 
           }
-        );
-
-      }
-    );
 
 
-    submitReview.addEventListener(
-      "click",
-      () => {
+          if (!message) {
 
-        if (selectedRating === 0) {
+            document
+              .getElementById(
+                "reviewMessage"
+              )
+              .focus();
 
-          ratingText.textContent =
-            "Please select a star rating first.";
+            return;
 
-          return;
+          }
+
+
+          const starsText =
+            "★".repeat(
+              selectedRating
+            ) +
+            "☆".repeat(
+              5 - selectedRating
+            );
+
+
+          const subject =
+            encodeURIComponent(
+              "Daily Facts Review - " +
+              starsText
+            );
+
+
+          const body =
+            encodeURIComponent(
+              "Daily Facts Review\n\n" +
+              "Rating: " +
+              starsText +
+              "\n\n" +
+              "Name: " +
+              name +
+              "\n\n" +
+              "Review:\n" +
+              message
+            );
+
+
+          window.location.href =
+            "mailto:dailyfacts.support@gmail.com" +
+            "?subject=" +
+            subject +
+            "&body=" +
+            body;
 
         }
-
-
-        const name =
-          reviewName.value.trim() ||
-          "Anonymous";
-
-
-        const message =
-          reviewMessage.value.trim();
-
-
-        if (!message) {
-
-          reviewMessage.focus();
-
-          return;
-
-        }
-
-
-        const stars =
-          "★".repeat(selectedRating) +
-          "☆".repeat(5 - selectedRating);
-
-
-        const subject =
-          encodeURIComponent(
-            "Daily Facts Review - " +
-            stars
-          );
-
-
-        const body =
-          encodeURIComponent(
-            "Daily Facts Review\n\n" +
-            "Rating: " +
-            stars +
-            "\n\n" +
-            "Name: " +
-            name +
-            "\n\n" +
-            "Review:\n" +
-            message
-          );
-
-
-        window.location.href =
-          "mailto:dailyfacts.support@gmail.com" +
-          "?subject=" +
-          subject +
-          "&body=" +
-          body;
-
-      }
-    );
+      );
 
   </script>
 
