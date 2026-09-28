@@ -1,1466 +1,1202 @@
-:root {
-  --bg: #f5f7ff;
-  --text: #0f172a;
-  --muted: #667085;
-  --blue: #2563eb;
-  --purple: #6366f1;
-  --green: #22c55e;
-  --orange: #f59e0b;
-  --line: rgba(15, 23, 42, 0.08);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  overflow-x: hidden;
-
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
 
-  color: var(--text);
-
-  background:
-    linear-gradient(
-      135deg,
-      #f8f9ff 0%,
-      #f1f5ff 48%,
-      #f9faff 100%
-    );
-}
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
-body.modal-open {
-  overflow: hidden;
-}
+  <meta
+    name="theme-color"
+    content="#f5f7ff"
+  >
 
-button,
-input,
-textarea {
-  font: inherit;
-}
+  <meta
+    name="description"
+    content="Download the Daily Facts Android app."
+  >
 
+  <link
+    rel="icon"
+    href="assets/logo.png"
+  >
 
-/* =================================
-   BACKGROUND
-   ================================= */
+  <title>Daily Facts</title>
 
-.bg-orb {
-  position: fixed;
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+</head>
 
-  width: 440px;
-  height: 440px;
+<body>
 
-  border-radius: 50%;
+  <!-- Background -->
 
-  filter: blur(90px);
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
 
-  pointer-events: none;
 
-  opacity: 0.38;
-}
+  <main class="page">
 
-.orb-1 {
-  top: -180px;
-  left: -130px;
+    <!-- ==============================
+         TOP BAR
+         ============================== -->
 
-  background:
-    rgba(99, 102, 241, 0.22);
-}
+    <header class="topbar">
 
-.orb-2 {
-  right: -190px;
-  bottom: -220px;
+      <a
+        class="brand"
+        href="#"
+      >
 
-  background:
-    rgba(37, 99, 235, 0.15);
-}
+        <img
+          src="assets/logo.png"
+          alt="Daily Facts logo"
+        >
 
-.bg-grid {
-  position: fixed;
-  inset: 0;
+        <span>Daily Facts</span>
 
-  pointer-events: none;
+      </a>
 
-  opacity: 0.18;
 
-  background-image:
-    linear-gradient(
-      rgba(15, 23, 42, 0.025) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(15, 23, 42, 0.025) 1px,
-      transparent 1px
-    );
+      <div class="top-actions">
 
-  background-size: 46px 46px;
-}
+        <button
+          id="openReviewTop"
+          class="top-review"
+          type="button"
+        >
+          ★ Review
+        </button>
 
 
-/* =================================
-   MAIN PAGE
-   ================================= */
+        <a
+          href="#downloadButton"
+          class="top-download"
+        >
+          Download APK
+        </a>
 
-.page {
-  position: relative;
+      </div>
 
-  z-index: 2;
+    </header>
 
-  width:
-    min(
-      1240px,
-      calc(100% - 64px)
-    );
 
-  min-height: 100vh;
+    <!-- ==============================
+         HERO
+         ============================== -->
 
-  margin: 0 auto;
+    <section class="hero">
 
-  display: flex;
-  flex-direction: column;
-}
 
+      <!-- LEFT SIDE -->
 
-/* =================================
-   TOP BAR
-   ================================= */
+      <div class="hero-copy">
 
-.topbar {
-  display: flex;
+        <div class="badge">
 
-  align-items: center;
+          <span></span>
 
-  justify-content: space-between;
+          ANDROID APP
 
-  padding: 24px 0;
-}
+        </div>
 
-.brand {
-  display: flex;
 
-  align-items: center;
+        <h1>
 
-  gap: 10px;
+          हर दिन
 
-  color: var(--text);
+          <strong>
+            कुछ नया जानें
+          </strong>
 
-  text-decoration: none;
+        </h1>
 
-  font-size: 16px;
 
-  font-weight: 800;
-}
+        <p class="description">
 
-.brand img {
-  width: 38px;
-  height: 38px;
+          Discover interesting facts about science, history,
+          nature, technology, human body, space and much more.
 
-  display: block;
+        </p>
 
-  border-radius: 11px;
-}
 
-.top-actions {
-  display: flex;
+        <!-- Buttons -->
 
-  align-items: center;
+        <div class="hero-buttons">
 
-  gap: 9px;
-}
 
-.top-review,
-.top-download {
-  min-height: 40px;
+          <!-- Download -->
 
-  padding: 0 15px;
+          <a
+            id="downloadButton"
+            class="download-button"
+            href="https://github.com/creativeAnil/daily-facts-content/releases/download/v1.0.9/daily-facts-v1.0.9.apk"
+          >
 
-  border-radius: 999px;
+            <span class="download-icon">
+              ↓
+            </span>
 
-  font-size: 12px;
 
-  font-weight: 750;
+            <span class="download-text">
 
-  cursor: pointer;
+              <b>
+                Download APK
+              </b>
 
-  text-decoration: none;
-}
+              <small>
+                Free for Android
+              </small>
 
-.top-review {
-  border:
-    1px solid
-    rgba(245, 158, 11, 0.18);
+            </span>
 
-  color: #a16207;
+          </a>
 
-  background:
-    rgba(255, 255, 255, 0.68);
-}
 
-.top-download {
-  display: inline-flex;
+          <!-- Review -->
 
-  align-items: center;
+          <button
+            id="openReview"
+            class="review-button"
+            type="button"
+          >
 
-  justify-content: center;
+            <span class="review-icon">
+              ★
+            </span>
 
-  color: #fff;
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--blue),
-      var(--purple)
-    );
+            <span class="review-text">
 
-  box-shadow:
-    0 9px 22px
-    rgba(37, 99, 235, 0.18);
-}
+              <b>
+                Rate & Review
+              </b>
 
+              <small>
+                Tell us what you think
+              </small>
 
-/* =================================
-   HERO - DESKTOP
-   ================================= */
+            </span>
 
-.hero {
-  flex: 1;
+          </button>
 
-  min-height:
-    calc(
-      100vh - 92px
-    );
+        </div>
 
-  display: grid;
 
-  grid-template-columns:
-    minmax(0, 1fr)
-    470px;
+        <!-- Feature pills -->
 
-  gap: 90px;
+        <div class="features">
 
-  align-items: center;
+          <div>
 
-  padding:
-    20px 0 45px;
-}
+            <span class="feature-icon blue">
+              ✦
+            </span>
 
+            <span>
+              Interesting facts
+            </span>
 
-/* =================================
-   LEFT CONTENT
-   ================================= */
+          </div>
 
-.hero-copy {
-  max-width: 650px;
-}
 
-.badge {
-  display: inline-flex;
+          <div>
 
-  align-items: center;
+            <span class="feature-icon green">
+              ◈
+            </span>
 
-  gap: 8px;
+            <span>
+              Fresh discoveries
+            </span>
 
-  padding:
-    8px 12px;
+          </div>
 
-  margin-bottom: 20px;
 
-  border:
-    1px solid
-    rgba(37, 99, 235, 0.11);
+          <div>
 
-  border-radius: 999px;
+            <span class="feature-icon orange">
+              ✓
+            </span>
 
-  color:
-    #64748b;
+            <span>
+              Free to download
+            </span>
 
-  background:
-    rgba(255, 255, 255, 0.64);
+          </div>
 
-  backdrop-filter:
-    blur(10px);
+        </div>
 
-  font-size: 10px;
+      </div>
 
-  font-weight: 850;
 
-  letter-spacing:
-    0.12em;
-}
+      <!-- RIGHT SIDE -->
 
-.badge span {
-  width: 6px;
-  height: 6px;
+      <div class="showcase">
 
-  border-radius: 50%;
+        <div class="showcase-glow"></div>
 
-  background:
-    var(--green);
 
-  box-shadow:
-    0 0 0 4px
-    rgba(34, 197, 94, 0.1);
-}
+        <!-- Floating card -->
 
-h1 {
-  margin: 0;
+        <div class="floating-card floating-top">
 
-  font-size:
-    clamp(
-      58px,
-      5vw,
-      74px
-    );
+          <span class="floating-symbol">
+            ✦
+          </span>
 
-  line-height: 1.03;
+          <span>
+            Learn something new
+          </span>
 
-  letter-spacing:
-    -0.052em;
+        </div>
 
-  font-weight: 850;
-}
 
-h1 strong {
-  display: block;
+        <!-- Phone shadow -->
 
-  font-weight: 850;
+        <div class="phone-shadow"></div>
 
-  background:
-    linear-gradient(
-      90deg,
-      #111827 0%,
-      var(--blue) 58%,
-      var(--purple) 100%
-    );
 
-  -webkit-background-clip:
-    text;
+        <!-- Phone -->
 
-  background-clip:
-    text;
+        <div class="phone">
 
-  color: transparent;
-}
+          <div class="phone-notch"></div>
 
-.description {
-  max-width: 550px;
 
-  margin:
-    21px 0 0;
+          <div class="phone-screen">
 
-  color:
-    var(--muted);
+            <img
+              id="mainScreenshot"
+              src="assets/app-screen-1.jpg"
+              alt="Daily Facts app screenshot"
+            >
 
-  font-size: 17px;
+          </div>
 
-  line-height: 1.7;
-}
+        </div>
 
 
-/* =================================
-   HERO BUTTONS
-   ================================= */
+        <!-- Floating bottom card -->
 
-.hero-buttons {
-  display: flex;
+        <div class="floating-card floating-bottom">
 
-  flex-wrap: wrap;
+          <span class="online-dot"></span>
 
-  gap: 11px;
+          <span>
+            New fact every day
+          </span>
 
-  margin-top: 26px;
-}
+        </div>
 
-.download-button,
-.review-button {
-  display: inline-flex;
 
-  align-items: center;
+        <!-- Slider dots -->
 
-  gap: 11px;
+        <div
+          class="slider-dots"
+          id="sliderDots"
+        ></div>
 
-  min-height: 60px;
+      </div>
 
-  border-radius: 16px;
+    </section>
 
-  cursor: pointer;
 
-  text-decoration: none;
-}
+    <!-- ==============================
+         FOOTER
+         ============================== -->
 
-.download-button {
-  min-width: 225px;
+    <footer>
 
-  padding:
-    8px 19px 8px 11px;
+      <span>
+        © <span id="year"></span> Daily Facts
+      </span>
 
-  color: #fff;
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--blue),
-      var(--purple)
-    );
+      <a
+        href="mailto:dailyfacts.support@gmail.com"
+      >
+        Support
+      </a>
 
-  box-shadow:
-    0 16px 32px
-    rgba(37, 99, 235, 0.21);
+    </footer>
 
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
+  </main>
 
-.download-button:hover {
-  transform:
-    translateY(-2px);
 
-  box-shadow:
-    0 21px 38px
-    rgba(37, 99, 235, 0.27);
-}
+  <!-- ==============================
+       REVIEW MODAL
+       ============================== -->
 
-.download-icon,
-.review-icon {
-  width: 40px;
-  height: 40px;
+  <div
+    id="reviewOverlay"
+    class="review-overlay"
+    aria-hidden="true"
+  >
 
-  display: flex;
+    <div
+      class="review-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="reviewTitle"
+    >
 
-  align-items: center;
+      <button
+        id="closeReview"
+        class="close-review"
+        type="button"
+        aria-label="Close review"
+      >
+        ×
+      </button>
 
-  justify-content: center;
 
-  border-radius: 12px;
+      <div class="review-header">
 
-  font-size: 18px;
-}
+        <div class="review-logo">
+          ★
+        </div>
 
-.download-icon {
-  background:
-    rgba(255, 255, 255, 0.15);
-}
 
-.download-text,
-.review-text {
-  display: flex;
+        <h2 id="reviewTitle">
+          Rate Daily Facts
+        </h2>
 
-  flex-direction: column;
 
-  align-items: flex-start;
+        <p>
+          We'd love to hear your feedback.
+        </p>
 
-  gap: 2px;
-}
+      </div>
 
-.download-text b,
-.review-text b {
-  font-size: 15px;
-}
 
-.download-text small,
-.review-text small {
-  font-size: 10px;
+      <div class="stars">
 
-  opacity: 0.72;
-}
+        <button
+          type="button"
+          class="star"
+          data-rating="1"
+          aria-label="1 star"
+        >
+          ★
+        </button>
 
-.review-button {
-  min-width: 198px;
 
-  padding:
-    8px 17px 8px 11px;
+        <button
+          type="button"
+          class="star"
+          data-rating="2"
+          aria-label="2 stars"
+        >
+          ★
+        </button>
 
-  border:
-    1px solid
-    rgba(245, 158, 11, 0.18);
 
-  color:
-    #475569;
+        <button
+          type="button"
+          class="star"
+          data-rating="3"
+          aria-label="3 stars"
+        >
+          ★
+        </button>
 
-  background:
-    rgba(255, 255, 255, 0.7);
 
-  box-shadow:
-    0 10px 23px
-    rgba(15, 23, 42, 0.05);
-}
+        <button
+          type="button"
+          class="star"
+          data-rating="4"
+          aria-label="4 stars"
+        >
+          ★
+        </button>
 
 
-/* =================================
-   FEATURE PILLS
-   ================================= */
+        <button
+          type="button"
+          class="star"
+          data-rating="5"
+          aria-label="5 stars"
+        >
+          ★
+        </button>
 
-.features {
-  display: flex;
+      </div>
 
-  flex-wrap: wrap;
 
-  gap: 8px;
+      <div
+        id="ratingMessage"
+        class="rating-message"
+      >
+        Select a rating
+      </div>
 
-  margin-top: 19px;
-}
 
-.features > div {
-  display: inline-flex;
+      <label for="reviewName">
 
-  align-items: center;
+        Name
 
-  gap: 7px;
+        <small>
+          optional
+        </small>
 
-  padding:
-    7px 10px;
+      </label>
 
-  border:
-    1px solid
-    var(--line);
 
-  border-radius: 999px;
+      <input
+        id="reviewName"
+        type="text"
+        maxlength="60"
+        placeholder="Your name"
+      >
 
-  color:
-    #687386;
 
-  background:
-    rgba(255, 255, 255, 0.55);
+      <label for="reviewMessage">
+        Review
+      </label>
 
-  font-size: 10px;
 
-  font-weight: 700;
-}
+      <textarea
+        id="reviewMessage"
+        maxlength="1000"
+        placeholder="Tell us about your experience..."
+      ></textarea>
 
-.feature-icon {
-  width: 22px;
-  height: 22px;
 
-  display: flex;
+      <button
+        id="sendReview"
+        class="send-review"
+        type="button"
+      >
+        Send Review
+      </button>
 
-  align-items: center;
 
-  justify-content: center;
+      <p class="review-note">
+        Your email app will open with your review prepared.
+      </p>
 
-  border-radius: 7px;
+    </div>
 
-  font-size: 11px;
-}
+  </div>
 
-.feature-icon.blue {
-  color: #2563eb;
-  background: #e9f0ff;
-}
 
-.feature-icon.green {
-  color: #16a34a;
-  background: #eaf9ef;
-}
+  <script>
 
-.feature-icon.orange {
-  color: #d97706;
-  background: #fff5df;
-}
+    /* ==================================
+       CURRENT YEAR
+       ================================== */
 
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
-/* =================================
-   PHONE SHOWCASE - DESKTOP
-   ================================= */
 
-.showcase {
-  position: relative;
+    /* ==================================
+       DYNAMIC SCREENSHOT CAROUSEL
+       ================================== */
 
-  min-height: 650px;
+    const assetsAPI =
+      "https://api.github.com/repos/creativeAnil/daily-facts-website/contents/assets";
 
-  display: flex;
 
-  align-items: center;
-
-  justify-content: center;
-}
-
-.showcase-glow {
-  position: absolute;
-
-  width: 470px;
-  height: 470px;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(37, 99, 235, 0.14),
-      rgba(99, 102, 241, 0.045) 46%,
-      transparent 73%
-    );
-
-  animation:
-    pulse 5s ease-in-out infinite;
-}
-
-.phone-shadow {
-  position: absolute;
-
-  bottom: 61px;
-
-  width: 270px;
-  height: 44px;
-
-  border-radius: 50%;
-
-  background:
-    rgba(15, 23, 42, 0.18);
-
-  filter:
-    blur(17px);
-}
-
-.phone {
-  position: relative;
-
-  z-index: 4;
-
-  width: 310px;
-
-  padding: 9px;
-
-  border-radius: 38px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #2d313b,
-      #0f1115
-    );
-
-  box-shadow:
-    0 30px 65px
-    rgba(15, 23, 42, 0.23),
-    0 0 0 1px
-    rgba(255, 255, 255, 0.06);
-
-  transform:
-    perspective(1150px)
-    rotateY(-5deg);
-
-  animation:
-    floatPhone 5s ease-in-out infinite;
-}
-
-.phone-notch {
-  position: absolute;
-
-  top: 6px;
-  left: 50%;
-
-  width: 84px;
-  height: 16px;
-
-  transform:
-    translateX(-50%);
-
-  border-radius:
-    0 0 10px 10px;
-
-  background:
-    #08090c;
-
-  z-index: 3;
-}
-
-.phone-screen {
-  overflow: hidden;
-
-  border-radius: 30px;
-
-  aspect-ratio:
-    9 / 19.5;
-
-  background:
-    #0f1115;
-}
-
-.phone-screen img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-
-  transition:
-    opacity 0.35s ease,
-    transform 0.35s ease;
-}
-
-.phone-screen img.slide-out {
-  opacity: 0;
-
-  transform:
-    scale(0.97)
-    translateX(18px);
-}
-
-
-/* =================================
-   FLOATING CARDS
-   ================================= */
-
-.floating-card {
-  position: absolute;
-
-  z-index: 6;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 8px;
-
-  padding:
-    10px 12px;
-
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.78);
-
-  border-radius: 13px;
-
-  background:
-    rgba(255, 255, 255, 0.78);
-
-  backdrop-filter:
-    blur(12px);
-
-  box-shadow:
-    0 13px 28px
-    rgba(15, 23, 42, 0.07);
-
-  color:
-    #334155;
-
-  font-size: 10px;
-
-  font-weight: 750;
-}
-
-.floating-top {
-  top: 116px;
-  left: -12px;
-
-  animation:
-    floatCard 4.5s ease-in-out infinite;
-}
-
-.floating-bottom {
-  right: -8px;
-  bottom: 108px;
-
-  animation:
-    floatCard2 4.8s ease-in-out infinite;
-}
-
-.floating-symbol {
-  width: 25px;
-  height: 25px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  border-radius: 8px;
-
-  color:
-    #f59e0b;
-
-  background:
-    #fff6dc;
-}
-
-.online-dot {
-  width: 7px;
-  height: 7px;
-
-  border-radius: 50%;
-
-  background:
-    var(--green);
-
-  box-shadow:
-    0 0 0 4px
-    rgba(34, 197, 94, 0.1);
-}
-
-
-/* =================================
-   SLIDER DOTS
-   ================================= */
-
-.slider-dots {
-  position: absolute;
-
-  bottom: 47px;
-  left: 50%;
-
-  z-index: 8;
-
-  transform:
-    translateX(-50%);
-
-  display: flex;
-
-  gap: 6px;
-}
-
-.slider-dots button {
-  width: 6px;
-  height: 6px;
-
-  padding: 0;
-
-  border: 0;
-
-  border-radius: 50%;
-
-  background:
-    #cbd5e1;
-
-  cursor: pointer;
-}
-
-.slider-dots button.active {
-  width: 18px;
-
-  border-radius: 999px;
-
-  background:
-    var(--blue);
-}
-
-
-/* =================================
-   FOOTER
-   ================================= */
-
-footer {
-  padding:
-    14px 0 20px;
-
-  border-top:
-    1px solid
-    var(--line);
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  color:
-    #7b8495;
-
-  font-size: 11px;
-}
-
-footer a {
-  color:
-    #59657a;
-
-  text-decoration: none;
-}
-
-
-/* =================================
-   REVIEW MODAL
-   ================================= */
-
-.review-overlay {
-  position: fixed;
-
-  inset: 0;
-
-  z-index: 100;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  padding: 20px;
-
-  background:
-    rgba(15, 23, 42, 0.48);
-
-  backdrop-filter:
-    blur(10px);
-
-  opacity: 0;
-
-  visibility: hidden;
-
-  transition:
-    opacity 0.25s ease,
-    visibility 0.25s ease;
-}
-
-.review-overlay.show {
-  opacity: 1;
-
-  visibility: visible;
-}
-
-.review-modal {
-  position: relative;
-
-  width:
-    min(
-      100%,
-      410px
-    );
-
-  padding:
-    25px;
-
-  border-radius: 23px;
-
-  background:
-    rgba(255, 255, 255, 0.97);
-
-  box-shadow:
-    0 30px 80px
-    rgba(15, 23, 42, 0.24);
-
-  transform:
-    translateY(12px)
-    scale(0.98);
-
-  transition:
-    transform 0.25s ease;
-}
-
-.review-overlay.show .review-modal {
-  transform:
-    translateY(0)
-    scale(1);
-}
-
-.close-review {
-  position: absolute;
-
-  top: 10px;
-  right: 10px;
-
-  width: 34px;
-  height: 34px;
-
-  border: 0;
-
-  border-radius: 50%;
-
-  background:
-    #f1f5f9;
-
-  color:
-    #64748b;
-
-  font-size: 23px;
-
-  cursor: pointer;
-}
-
-.review-header {
-  text-align: center;
-}
-
-.review-logo {
-  width: 48px;
-  height: 48px;
-
-  margin:
-    0 auto 11px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  border-radius: 14px;
-
-  color:
-    #f59e0b;
-
-  background:
-    #fff5d7;
-
-  font-size: 23px;
-}
-
-.review-header h2 {
-  margin: 0;
-
-  font-size: 23px;
-}
-
-.review-header p {
-  margin:
-    6px 0 0;
-
-  color:
-    var(--muted);
-
-  font-size: 12px;
-}
-
-.stars {
-  display: flex;
-
-  justify-content: center;
-
-  gap: 4px;
-
-  margin-top: 19px;
-}
-
-.star {
-  width: 42px;
-  height: 42px;
-
-  border: 0;
-
-  border-radius: 11px;
-
-  background:
-    #f8fafc;
-
-  color:
-    #cbd5e1;
-
-  font-size: 23px;
-
-  cursor: pointer;
-}
-
-.star:hover,
-.star.selected {
-  color:
-    #f59e0b;
-
-  background:
-    #fff5d7;
-}
-
-.rating-message {
-  min-height: 18px;
-
-  margin:
-    8px 0 14px;
-
-  text-align: center;
-
-  color:
-    #7b8495;
-
-  font-size: 11px;
-}
-
-.review-modal label {
-  display: block;
-
-  margin:
-    11px 0 6px;
-
-  color:
-    #475569;
-
-  font-size: 11px;
-
-  font-weight: 750;
-}
-
-.review-modal label small {
-  color:
-    #94a3b8;
-
-  font-weight: 500;
-}
-
-.review-modal input,
-.review-modal textarea {
-  width: 100%;
-
-  border:
-    1px solid
-    #e2e8f0;
-
-  border-radius: 11px;
-
-  outline: none;
-
-  color:
-    #0f172a;
-
-  background:
-    #f8fafc;
-
-  font-size: 13px;
-}
-
-.review-modal input {
-  height: 43px;
-
-  padding:
-    0 12px;
-}
-
-.review-modal textarea {
-  min-height: 92px;
-
-  padding:
-    11px 12px;
-
-  resize:
-    vertical;
-}
-
-.review-modal input:focus,
-.review-modal textarea:focus {
-  border-color:
-    rgba(37, 99, 235, 0.42);
-
-  box-shadow:
-    0 0 0 3px
-    rgba(37, 99, 235, 0.07);
-
-  background:
-    #fff;
-}
-
-.send-review {
-  width: 100%;
-
-  min-height: 47px;
-
-  margin-top: 15px;
-
-  border: 0;
-
-  border-radius: 11px;
-
-  color:
-    #fff;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--blue),
-      var(--purple)
-    );
-
-  font-size: 13px;
-
-  font-weight: 800;
-
-  cursor: pointer;
-}
-
-.review-note {
-  margin:
-    8px 0 0;
-
-  text-align: center;
-
-  color:
-    #94a3b8;
-
-  font-size: 9px;
-}
-
-
-/* =================================
-   ANIMATIONS
-   ================================= */
-
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(0.96);
-    opacity: 0.7;
-  }
-
-  50% {
-    transform: scale(1.04);
-    opacity: 1;
-  }
-}
-
-@keyframes floatPhone {
-  0%,
-  100% {
-    transform:
-      perspective(1150px)
-      rotateY(-5deg)
-      translateY(0);
-  }
-
-  50% {
-    transform:
-      perspective(1150px)
-      rotateY(-5deg)
-      translateY(-7px);
-  }
-}
-
-@keyframes floatCard {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-7px);
-  }
-}
-
-@keyframes floatCard2 {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(6px);
-  }
-}
-
-
-/* =================================
-   TABLET
-   ================================= */
-
-@media (max-width: 1000px) {
-
-  .page {
-    width:
-      min(
-        1100px,
-        calc(100% - 40px)
+    const mainScreenshot =
+      document.getElementById(
+        "mainScreenshot"
       );
-  }
-
-  .hero {
-    grid-template-columns:
-      minmax(0, 1fr)
-      390px;
-
-    gap:
-      45px;
-  }
-
-  .phone {
-    width:
-      285px;
-  }
-
-  .floating-top {
-    left:
-      -5px;
-  }
-
-  .floating-bottom {
-    right:
-      -5px;
-  }
-}
 
 
-/* =================================
-   MOBILE / PHONE
-   ================================= */
-
-@media (max-width: 800px) {
-
-  .page {
-    width:
-      calc(100% - 28px);
-  }
-
-  .hero {
-    grid-template-columns:
-      1fr;
-
-    min-height:
-      auto;
-
-    gap:
-      26px;
-
-    padding:
-      24px 0 36px;
-  }
-
-  .hero-copy {
-    max-width:
-      680px;
-
-    margin:
-      0 auto;
-
-    text-align:
-      center;
-  }
-
-  .badge {
-    margin-left:
-      auto;
-
-    margin-right:
-      auto;
-  }
-
-  .description {
-    margin-left:
-      auto;
-
-    margin-right:
-      auto;
-  }
-
-  .hero-buttons {
-    justify-content:
-      center;
-  }
-
-  .features {
-    justify-content:
-      center;
-  }
-
-  .showcase {
-    min-height:
-      580px;
-  }
-
-  .phone {
-    width:
-      min(
-        74vw,
-        290px
+    const sliderDots =
+      document.getElementById(
+        "sliderDots"
       );
-  }
-
-  .showcase-glow {
-    width:
-      370px;
-
-    height:
-      370px;
-  }
-
-  .floating-top {
-    left:
-      0;
-    top:
-      62px;
-  }
-
-  .floating-bottom {
-    right:
-      0;
-    bottom:
-      68px;
-  }
-}
 
 
-/* =================================
-   SMALL PHONE
-   ================================= */
+    let screenshots = [];
 
-@media (max-width: 560px) {
+    let currentSlide = 0;
 
-  .topbar {
-    padding:
-      17px 0;
-  }
+    let sliderTimer = null;
 
-  .top-review,
-  .top-download {
-    padding:
-      0 10px;
 
-    font-size:
-      10px;
-  }
+    /*
+      Find every app-screen image inside
+      the GitHub assets folder.
+    */
 
-  h1 {
-    font-size:
-      45px;
-  }
+    async function loadScreenshots() {
 
-  .description {
-    font-size:
-      15px;
-  }
+      try {
 
-  .hero-buttons {
-    flex-direction:
-      column;
-  }
+        const response =
+          await fetch(
+            assetsAPI,
+            {
+              headers: {
+                "Accept":
+                  "application/vnd.github+json"
+              }
+            }
+          );
 
-  .download-button,
-  .review-button {
-    width:
-      100%;
 
-    justify-content:
-      flex-start;
-  }
+        if (!response.ok) {
 
-  .showcase {
-    min-height:
-      520px;
-  }
+          throw new Error(
+            "Unable to load assets"
+          );
 
-  .phone {
-    width:
-      min(
-        74vw,
-        280px
+        }
+
+
+        const files =
+          await response.json();
+
+
+        screenshots =
+          files
+            .filter((file) => {
+
+              return (
+                file.type === "file" &&
+                /^app-screen-\d+\.(jpg|jpeg|png|webp)$/i
+                  .test(file.name)
+              );
+
+            })
+            .sort((a, b) => {
+
+              const numberA =
+                parseInt(
+                  a.name.match(/\d+/)[0],
+                  10
+                );
+
+              const numberB =
+                parseInt(
+                  b.name.match(/\d+/)[0],
+                  10
+                );
+
+              return numberA - numberB;
+
+            })
+            .map((file) => file.download_url);
+
+
+        /*
+          Safety fallback.
+        */
+
+        if (screenshots.length === 0) {
+
+          screenshots = [
+            "assets/app-screen-1.jpg"
+          ];
+
+        }
+
+
+        createSliderDots();
+
+        preloadScreenshots();
+
+        showSlide(0);
+
+        startSlider();
+
+      } catch (error) {
+
+        console.error(
+          "Could not load screenshots:",
+          error
+        );
+
+
+        /*
+          Fallback if GitHub API is temporarily unavailable.
+        */
+
+        screenshots = [
+          "assets/app-screen-1.jpg",
+          "assets/app-screen-2.jpg",
+          "assets/app-screen-3.jpg",
+          "assets/app-screen-4.jpg",
+          "assets/app-screen-5.jpg",
+          "assets/app-screen-6.jpg",
+          "assets/app-screen-7.jpg",
+          "assets/app-screen-8.jpg",
+          "assets/app-screen-9.jpg",
+          "assets/app-screen-10.jpg"
+        ];
+
+        createSliderDots();
+
+        preloadScreenshots();
+
+        showSlide(0);
+
+        startSlider();
+
+      }
+
+    }
+
+
+    /* Create dots automatically */
+
+    function createSliderDots() {
+
+      sliderDots.innerHTML = "";
+
+
+      screenshots.forEach(
+        (src, index) => {
+
+          const dot =
+            document.createElement(
+              "button"
+            );
+
+
+          dot.type =
+            "button";
+
+
+          dot.dataset.slide =
+            index;
+
+
+          dot.setAttribute(
+            "aria-label",
+            "Screenshot " +
+              (index + 1)
+          );
+
+
+          dot.addEventListener(
+            "click",
+            () => {
+
+              showSlide(index);
+
+              resetSlider();
+
+            }
+          );
+
+
+          sliderDots.appendChild(
+            dot
+          );
+
+        }
       );
-  }
 
-  .showcase-glow {
-    width:
-      340px;
+    }
 
-    height:
-      340px;
-  }
 
-  .floating-card {
-    font-size:
-      9px;
+    /* Preload images */
 
-    padding:
-      8px 10px;
-  }
+    function preloadScreenshots() {
 
-  footer {
-    padding:
-      12px 0 17px;
-  }
-}
+      screenshots.forEach(
+        (src) => {
+
+          const image =
+            new Image();
+
+          image.src =
+            src;
+
+        }
+      );
+
+    }
+
+
+    /* Show slide */
+
+    function showSlide(index) {
+
+      if (
+        screenshots.length === 0
+      ) {
+
+        return;
+
+      }
+
+
+      currentSlide =
+        index;
+
+
+      mainScreenshot.classList.add(
+        "slide-out"
+      );
+
+
+      setTimeout(
+        () => {
+
+          mainScreenshot.src =
+            screenshots[
+              currentSlide
+            ];
+
+
+          mainScreenshot.classList.remove(
+            "slide-out"
+          );
+
+        },
+        350
+      );
+
+
+      const dots =
+        sliderDots.querySelectorAll(
+          "button"
+        );
+
+
+      dots.forEach(
+        (dot, index) => {
+
+          dot.classList.toggle(
+            "active",
+            index === currentSlide
+          );
+
+        }
+      );
+
+    }
+
+
+    /* Automatic slideshow */
+
+    function startSlider() {
+
+      clearInterval(
+        sliderTimer
+      );
+
+
+      sliderTimer =
+        setInterval(
+          () => {
+
+            const nextSlide =
+              (
+                currentSlide + 1
+              ) %
+              screenshots.length;
+
+
+            showSlide(
+              nextSlide
+            );
+
+          },
+          3500
+        );
+
+    }
+
+
+    function resetSlider() {
+
+      startSlider();
+
+    }
+
+
+    loadScreenshots();
+
+
+    /* ==================================
+       LATEST GITHUB APK
+       ================================== */
+
+    const releaseAPI =
+      "https://api.github.com/repos/creativeAnil/daily-facts-content/releases/latest";
+
+
+    const downloadButton =
+      document.getElementById(
+        "downloadButton"
+      );
+
+
+    async function loadLatestAPK() {
+
+      try {
+
+        const response =
+          await fetch(
+            releaseAPI,
+            {
+              headers: {
+                "Accept":
+                  "application/vnd.github+json"
+              }
+            }
+          );
+
+
+        if (!response.ok) {
+
+          throw new Error(
+            "GitHub request failed"
+          );
+
+        }
+
+
+        const release =
+          await response.json();
+
+
+        const apk =
+          release.assets.find(
+            (asset) =>
+              asset.name
+                .toLowerCase()
+                .endsWith(".apk")
+          );
+
+
+        if (apk) {
+
+          downloadButton.href =
+            apk.browser_download_url;
+
+        }
+
+      } catch (error) {
+
+        console.error(
+          "Could not load latest APK:",
+          error
+        );
+
+      }
+
+    }
+
+
+    loadLatestAPK();
+
+
+    /* ==================================
+       REVIEW MODAL
+       ================================== */
+
+    const reviewOverlay =
+      document.getElementById(
+        "reviewOverlay"
+      );
+
+
+    const openReview =
+      document.getElementById(
+        "openReview"
+      );
+
+
+    const openReviewTop =
+      document.getElementById(
+        "openReviewTop"
+      );
+
+
+    const closeReview =
+      document.getElementById(
+        "closeReview"
+      );
+
+
+    function openReviewModal() {
+
+      reviewOverlay.classList.add(
+        "show"
+      );
+
+
+      reviewOverlay.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+
+      document.body.classList.add(
+        "modal-open"
+      );
+
+    }
+
+
+    function closeReviewModal() {
+
+      reviewOverlay.classList.remove(
+        "show"
+      );
+
+
+      reviewOverlay.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+      document.body.classList.remove(
+        "modal-open"
+      );
+
+    }
+
+
+    openReview.addEventListener(
+      "click",
+      openReviewModal
+    );
+
+
+    openReviewTop.addEventListener(
+      "click",
+      openReviewModal
+    );
+
+
+    closeReview.addEventListener(
+      "click",
+      closeReviewModal
+    );
+
+
+    reviewOverlay.addEventListener(
+      "click",
+      (event) => {
+
+        if (
+          event.target ===
+          reviewOverlay
+        ) {
+
+          closeReviewModal();
+
+        }
+
+      }
+    );
+
+
+    document.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (
+          event.key ===
+          "Escape"
+        ) {
+
+          closeReviewModal();
+
+        }
+
+      }
+    );
+
+
+    /* ==================================
+       STAR RATING
+       ================================== */
+
+    const stars =
+      document.querySelectorAll(
+        ".star"
+      );
+
+
+    const ratingMessage =
+      document.getElementById(
+        "ratingMessage"
+      );
+
+
+    let selectedRating = 0;
+
+
+    const ratingText = {
+
+      1:
+        "We'll work to improve.",
+
+      2:
+        "Thanks for the feedback.",
+
+      3:
+        "Thanks for trying Daily Facts.",
+
+      4:
+        "Great! We're glad you like it.",
+
+      5:
+        "Awesome! Thank you."
+
+    };
+
+
+    stars.forEach(
+      (star) => {
+
+        star.addEventListener(
+          "click",
+          () => {
+
+            selectedRating =
+              Number(
+                star.dataset.rating
+              );
+
+
+            stars.forEach(
+              (item) => {
+
+                const value =
+                  Number(
+                    item.dataset.rating
+                  );
+
+
+                item.classList.toggle(
+                  "selected",
+                  value <=
+                    selectedRating
+                );
+
+              }
+            );
+
+
+            ratingMessage.textContent =
+              ratingText[
+                selectedRating
+              ];
+
+          }
+        );
+
+      }
+    );
+
+
+    /* ==================================
+       SEND REVIEW
+       ================================== */
+
+    document
+      .getElementById(
+        "sendReview"
+      )
+      .addEventListener(
+        "click",
+        () => {
+
+          const name =
+            document
+              .getElementById(
+                "reviewName"
+              )
+              .value
+              .trim() ||
+            "Anonymous";
+
+
+          const message =
+            document
+              .getElementById(
+                "reviewMessage"
+              )
+              .value
+              .trim();
+
+
+          if (
+            selectedRating === 0
+          ) {
+
+            ratingMessage.textContent =
+              "Please select a star rating.";
+
+            return;
+
+          }
+
+
+          if (!message) {
+
+            document
+              .getElementById(
+                "reviewMessage"
+              )
+              .focus();
+
+            return;
+
+          }
+
+
+          const starsText =
+            "★".repeat(
+              selectedRating
+            ) +
+            "☆".repeat(
+              5 - selectedRating
+            );
+
+
+          const subject =
+            encodeURIComponent(
+              "Daily Facts Review - " +
+              starsText
+            );
+
+
+          const body =
+            encodeURIComponent(
+              "Daily Facts Review\n\n" +
+
+              "Rating: " +
+              starsText +
+              "\n\n" +
+
+              "Name: " +
+              name +
+              "\n\n" +
+
+              "Review:\n" +
+              message
+            );
+
+
+          window.location.href =
+            "mailto:dailyfacts.support@gmail.com" +
+            "?subject=" +
+            subject +
+            "&body=" +
+            body;
+
+        }
+      );
+
+  </script>
+
+</body>
+</html>
