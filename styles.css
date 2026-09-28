@@ -174,26 +174,28 @@ textarea {
 
   align-items: center;
 
-  gap: 11px;
+  gap: 13px;
 
   color: var(--text);
 
   text-decoration: none;
 
-  font-size: 17px;
+  font-size: 22px;
 
   font-weight: 800;
+
+  letter-spacing: -0.025em;
 }
 
 .brand img {
-  width: 52px;
-  height: 52px;
-
-  object-fit: cover;
+  width: 64px;
+  height: 64px;
 
   display: block;
 
-  border-radius: 14px;
+  object-fit: cover;
+
+  border-radius: 16px;
 }
 
 .top-actions {
@@ -219,6 +221,11 @@ textarea {
   cursor: pointer;
 
   text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .top-review {
@@ -226,8 +233,7 @@ textarea {
     1px solid
     rgba(245, 158, 11, 0.20);
 
-  color:
-    #a16207;
+  color: #a16207;
 
   background:
     rgba(255, 255, 255, 0.72);
@@ -252,6 +258,18 @@ textarea {
   box-shadow:
     0 10px 23px
     rgba(37, 99, 235, 0.18);
+}
+
+.top-review:hover,
+.top-download:hover {
+  transform:
+    translateY(-2px);
+}
+
+.top-download:hover {
+  box-shadow:
+    0 13px 27px
+    rgba(37, 99, 235, 0.24);
 }
 
 
@@ -284,7 +302,9 @@ textarea {
 }
 
 
-/* badge */
+/* =================================
+   HERO BADGE
+   ================================= */
 
 .badge {
   display: inline-flex;
@@ -336,7 +356,9 @@ textarea {
 }
 
 
-/* hero heading */
+/* =================================
+   HERO HEADING
+   ================================= */
 
 h1 {
   margin: 0;
@@ -433,6 +455,10 @@ h1 strong {
   cursor: pointer;
 
   text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .download-button {
@@ -453,6 +479,15 @@ h1 strong {
   box-shadow:
     0 16px 32px
     rgba(37, 99, 235, 0.21);
+}
+
+.download-button:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 21px 38px
+    rgba(37, 99, 235, 0.27);
 }
 
 .download-icon,
@@ -520,6 +555,15 @@ h1 strong {
     rgba(15, 23, 42, 0.05);
 }
 
+.review-button:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 14px 27px
+    rgba(15, 23, 42, 0.08);
+}
+
 .review-icon {
   color:
     #f59e0b;
@@ -528,6 +572,11 @@ h1 strong {
     #fff5d7;
 }
 
+
+/* =================================
+   VERSION
+   ================================= */
+
 .version-info {
   margin:
     12px 0 0;
@@ -535,35 +584,46 @@ h1 strong {
   color:
     #7b8495;
 
-  font-size: 12px;
+  font-size:
+    12px;
 }
 
 .version-info strong {
   color:
     #475569;
 
-  font-weight: 800;
+  font-weight:
+    800;
 }
 
 
-/* features */
+/* =================================
+   FEATURES
+   ================================= */
 
 .features {
-  display: flex;
+  display:
+    flex;
 
-  flex-wrap: wrap;
+  flex-wrap:
+    wrap;
 
-  gap: 8px;
+  gap:
+    8px;
 
-  margin-top: 18px;
+  margin-top:
+    18px;
 }
 
 .features > div {
-  display: inline-flex;
+  display:
+    inline-flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  gap: 7px;
+  gap:
+    7px;
 
   padding:
     7px 10px;
@@ -572,7 +632,8 @@ h1 strong {
     1px solid
     var(--line);
 
-  border-radius: 999px;
+  border-radius:
+    999px;
 
   color:
     #687386;
@@ -580,24 +641,34 @@ h1 strong {
   background:
     rgba(255, 255, 255, 0.55);
 
-  font-size: 10px;
+  font-size:
+    10px;
 
-  font-weight: 700;
+  font-weight:
+    700;
 }
 
 .feature-icon {
-  width: 22px;
-  height: 22px;
+  width:
+    22px;
 
-  display: flex;
+  height:
+    22px;
 
-  align-items: center;
+  display:
+    flex;
 
-  justify-content: center;
+  align-items:
+    center;
 
-  border-radius: 7px;
+  justify-content:
+    center;
 
-  font-size: 11px;
+  border-radius:
+    7px;
+
+  font-size:
+    11px;
 }
 
 .feature-icon.blue {
@@ -630,24 +701,34 @@ h1 strong {
    ================================= */
 
 .showcase {
-  position: relative;
+  position:
+    relative;
 
-  min-height: 650px;
+  min-height:
+    650px;
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  justify-content: center;
+  justify-content:
+    center;
 }
 
 .showcase-glow {
-  position: absolute;
+  position:
+    absolute;
 
-  width: 470px;
-  height: 470px;
+  width:
+    470px;
 
-  border-radius: 50%;
+  height:
+    470px;
+
+  border-radius:
+    50%;
 
   background:
     radial-gradient(
@@ -662,14 +743,20 @@ h1 strong {
 }
 
 .phone-shadow {
-  position: absolute;
+  position:
+    absolute;
 
-  bottom: 61px;
+  bottom:
+    61px;
 
-  width: 270px;
-  height: 44px;
+  width:
+    270px;
 
-  border-radius: 50%;
+  height:
+    44px;
+
+  border-radius:
+    50%;
 
   background:
     rgba(15, 23, 42, 0.18);
@@ -679,15 +766,20 @@ h1 strong {
 }
 
 .phone {
-  position: relative;
+  position:
+    relative;
 
-  z-index: 4;
+  z-index:
+    4;
 
-  width: 310px;
+  width:
+    310px;
 
-  padding: 9px;
+  padding:
+    9px;
 
-  border-radius: 38px;
+  border-radius:
+    38px;
 
   background:
     linear-gradient(
@@ -710,14 +802,28 @@ h1 strong {
     floatPhone 5s ease-in-out infinite;
 }
 
+.phone:hover {
+  transform:
+    perspective(1150px)
+    rotateY(0deg)
+    translateY(-5px);
+}
+
 .phone-notch {
-  position: absolute;
+  position:
+    absolute;
 
-  top: 6px;
-  left: 50%;
+  top:
+    6px;
 
-  width: 84px;
-  height: 16px;
+  left:
+    50%;
+
+  width:
+    84px;
+
+  height:
+    16px;
 
   transform:
     translateX(-50%);
@@ -728,28 +834,36 @@ h1 strong {
   background:
     #08090c;
 
-  z-index: 3;
+  z-index:
+    3;
 }
 
 .phone-screen {
-  overflow: hidden;
+  overflow:
+    hidden;
 
   aspect-ratio:
     9 / 19.5;
 
-  border-radius: 30px;
+  border-radius:
+    30px;
 
   background:
     #0f1115;
 }
 
 .phone-screen img {
-  width: 100%;
-  height: 100%;
+  width:
+    100%;
 
-  display: block;
+  height:
+    100%;
 
-  object-fit: cover;
+  display:
+    block;
+
+  object-fit:
+    cover;
 
   transition:
     opacity 0.35s ease,
@@ -757,7 +871,8 @@ h1 strong {
 }
 
 .phone-screen img.slide-out {
-  opacity: 0;
+  opacity:
+    0;
 
   transform:
     scale(0.97)
@@ -765,18 +880,25 @@ h1 strong {
 }
 
 
-/* floating cards */
+/* =================================
+   FLOATING CARDS
+   ================================= */
 
 .floating-card {
-  position: absolute;
+  position:
+    absolute;
 
-  z-index: 6;
+  z-index:
+    6;
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  gap: 8px;
+  gap:
+    8px;
 
   padding:
     10px 12px;
@@ -785,7 +907,8 @@ h1 strong {
     1px solid
     rgba(255, 255, 255, 0.80);
 
-  border-radius: 13px;
+  border-radius:
+    13px;
 
   color:
     #334155;
@@ -800,40 +923,56 @@ h1 strong {
     0 13px 28px
     rgba(15, 23, 42, 0.07);
 
-  font-size: 10px;
+  font-size:
+    10px;
 
-  font-weight: 750;
+  font-weight:
+    750;
 
-  white-space: nowrap;
+  white-space:
+    nowrap;
 }
 
 .floating-top {
-  top: 116px;
-  left: -12px;
+  top:
+    116px;
+
+  left:
+    -12px;
 
   animation:
     floatCard 4.5s ease-in-out infinite;
 }
 
 .floating-bottom {
-  right: -8px;
-  bottom: 108px;
+  right:
+    -8px;
+
+  bottom:
+    108px;
 
   animation:
     floatCard2 4.8s ease-in-out infinite;
 }
 
 .floating-symbol {
-  width: 25px;
-  height: 25px;
+  width:
+    25px;
 
-  display: flex;
+  height:
+    25px;
 
-  align-items: center;
+  display:
+    flex;
 
-  justify-content: center;
+  align-items:
+    center;
 
-  border-radius: 8px;
+  justify-content:
+    center;
+
+  border-radius:
+    8px;
 
   color:
     var(--orange);
@@ -843,10 +982,14 @@ h1 strong {
 }
 
 .online-dot {
-  width: 7px;
-  height: 7px;
+  width:
+    7px;
 
-  border-radius: 50%;
+  height:
+    7px;
+
+  border-radius:
+    50%;
 
   background:
     var(--green);
@@ -857,31 +1000,43 @@ h1 strong {
 }
 
 
-/* slider dots */
+/* =================================
+   HERO SLIDER DOTS
+   ================================= */
 
 .slider-dots {
-  position: absolute;
+  position:
+    absolute;
 
-  left: 50%;
-  bottom: 47px;
+  left:
+    50%;
 
-  z-index: 8;
+  bottom:
+    47px;
+
+  z-index:
+    8;
 
   transform:
     translateX(-50%);
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  gap: 6px;
+  gap:
+    6px;
 
-  max-width: 220px;
+  max-width:
+    220px;
 
   padding:
     5px 8px;
 
-  border-radius: 999px;
+  border-radius:
+    999px;
 
   background:
     rgba(255, 255, 255, 0.45);
@@ -894,25 +1049,34 @@ h1 strong {
   flex:
     0 0 auto;
 
-  width: 6px;
-  height: 6px;
+  width:
+    6px;
 
-  padding: 0;
+  height:
+    6px;
 
-  border: 0;
+  padding:
+    0;
 
-  border-radius: 50%;
+  border:
+    0;
+
+  border-radius:
+    50%;
 
   background:
     #cbd5e1;
 
-  cursor: pointer;
+  cursor:
+    pointer;
 }
 
 .slider-dots button.active {
-  width: 18px;
+  width:
+    18px;
 
-  border-radius: 999px;
+  border-radius:
+    999px;
 
   background:
     var(--blue);
@@ -920,7 +1084,7 @@ h1 strong {
 
 
 /* =================================
-   GENERAL SECTIONS
+   SECTIONS
    ================================= */
 
 .info-section {
@@ -929,7 +1093,8 @@ h1 strong {
 }
 
 .section-heading {
-  max-width: 680px;
+  max-width:
+    680px;
 
   margin:
     0 auto 34px;
@@ -939,23 +1104,28 @@ h1 strong {
 }
 
 .section-label {
-  display: inline-block;
+  display:
+    inline-block;
 
-  margin-bottom: 10px;
+  margin-bottom:
+    10px;
 
   color:
     var(--blue);
 
-  font-size: 10px;
+  font-size:
+    10px;
 
-  font-weight: 850;
+  font-weight:
+    850;
 
   letter-spacing:
-    0.15em;
+    .15em;
 }
 
 .section-heading h2 {
-  margin: 0;
+  margin:
+    0;
 
   font-size:
     clamp(
@@ -964,10 +1134,11 @@ h1 strong {
       48px
     );
 
-  line-height: 1.15;
+  line-height:
+    1.15;
 
   letter-spacing:
-    -0.035em;
+    -.035em;
 }
 
 .section-heading h2 strong {
@@ -976,7 +1147,8 @@ h1 strong {
 }
 
 .section-heading p {
-  max-width: 600px;
+  max-width:
+    600px;
 
   margin:
     12px auto 0;
@@ -987,7 +1159,8 @@ h1 strong {
   font-size:
     15px;
 
-  line-height: 1.65;
+  line-height:
+    1.65;
 }
 
 
@@ -996,16 +1169,19 @@ h1 strong {
    ================================= */
 
 .intro-card {
-  display: grid;
+  display:
+    grid;
 
   grid-template-columns:
     auto
     minmax(0, 1fr)
     auto;
 
-  align-items: center;
+  align-items:
+    center;
 
-  gap: 28px;
+  gap:
+    28px;
 
   padding:
     30px;
@@ -1014,7 +1190,8 @@ h1 strong {
     1px solid
     rgba(99, 102, 241, 0.08);
 
-  border-radius: 28px;
+  border-radius:
+    28px;
 
   background:
     rgba(255, 255, 255, 0.66);
@@ -1028,16 +1205,23 @@ h1 strong {
 }
 
 .intro-icon {
-  width: 72px;
-  height: 72px;
+  width:
+    72px;
 
-  display: flex;
+  height:
+    72px;
 
-  align-items: center;
+  display:
+    flex;
 
-  justify-content: center;
+  align-items:
+    center;
 
-  border-radius: 22px;
+  justify-content:
+    center;
+
+  border-radius:
+    22px;
 
   background:
     linear-gradient(
@@ -1046,13 +1230,16 @@ h1 strong {
       #ffe9d4
     );
 
-  font-size: 32px;
+  font-size:
+    32px;
 }
 
 .intro-content h3 {
-  margin: 0;
+  margin:
+    0;
 
-  font-size: 22px;
+  font-size:
+    22px;
 }
 
 .intro-content p {
@@ -1073,7 +1260,8 @@ h1 strong {
   display:
     grid;
 
-  gap: 10px;
+  gap:
+    10px;
 
   min-width:
     230px;
@@ -1086,7 +1274,8 @@ h1 strong {
   align-items:
     center;
 
-  gap: 8px;
+  gap:
+    8px;
 
   color:
     #59657a;
@@ -1099,8 +1288,11 @@ h1 strong {
 }
 
 .intro-points span {
-  width: 20px;
-  height: 20px;
+  width:
+    20px;
+
+  height:
+    20px;
 
   display:
     flex;
@@ -1225,63 +1417,99 @@ h1 strong {
 }
 
 .category-icon.science {
-  color: #2563eb;
-  background: #e8f0ff;
+  color:
+    #2563eb;
+
+  background:
+    #e8f0ff;
 }
 
 .category-icon.history {
-  color: #b45309;
-  background: #fff0d8;
+  color:
+    #b45309;
+
+  background:
+    #fff0d8;
 }
 
 .category-icon.nature {
-  color: #16a34a;
-  background: #eaf9ef;
+  color:
+    #16a34a;
+
+  background:
+    #eaf9ef;
 }
 
 .category-icon.technology {
-  color: #4f46e5;
-  background: #efedff;
+  color:
+    #4f46e5;
+
+  background:
+    #efedff;
 }
 
 .category-icon.space {
-  color: #7c3aed;
-  background: #f1eaff;
+  color:
+    #7c3aed;
+
+  background:
+    #f1eaff;
 }
 
 .category-icon.body {
-  color: #e11d48;
-  background: #ffe9ee;
+  color:
+    #e11d48;
+
+  background:
+    #ffe9ee;
 }
 
 .category-icon.animals {
-  color: #ea580c;
-  background: #fff0e6;
+  color:
+    #ea580c;
+
+  background:
+    #fff0e6;
 }
 
 .category-icon.psychology {
-  color: #9333ea;
-  background: #f5eaff;
+  color:
+    #9333ea;
+
+  background:
+    #f5eaff;
 }
 
 .category-icon.gaming {
-  color: #0891b2;
-  background: #e8faff;
+  color:
+    #0891b2;
+
+  background:
+    #e8faff;
 }
 
 .category-icon.movies {
-  color: #db2777;
-  background: #ffeafa;
+  color:
+    #db2777;
+
+  background:
+    #ffeafa;
 }
 
 .category-icon.entertainment {
-  color: #d97706;
-  background: #fff5df;
+  color:
+    #d97706;
+
+  background:
+    #fff5df;
 }
 
 .category-icon.general {
-  color: #2563eb;
-  background: #e9f0ff;
+  color:
+    #2563eb;
+
+  background:
+    #e9f0ff;
 }
 
 
@@ -2104,6 +2332,9 @@ footer {
   font-size:
     23px;
 
+  line-height:
+    1;
+
   cursor:
     pointer;
 }
@@ -2199,6 +2430,9 @@ footer {
 
   font-size:
     23px;
+
+  line-height:
+    1;
 
   cursor:
     pointer;
@@ -2371,19 +2605,27 @@ footer {
    ================================= */
 
 @keyframes pulse {
+
   0%,
   100% {
-    transform: scale(.96);
-    opacity: .7;
+    transform:
+      scale(.96);
+
+    opacity:
+      .7;
   }
 
   50% {
-    transform: scale(1.04);
-    opacity: 1;
+    transform:
+      scale(1.04);
+
+    opacity:
+      1;
   }
 }
 
 @keyframes floatPhone {
+
   0%,
   100% {
     transform:
@@ -2401,6 +2643,7 @@ footer {
 }
 
 @keyframes floatCard {
+
   0%,
   100% {
     transform:
@@ -2414,6 +2657,7 @@ footer {
 }
 
 @keyframes floatCard2 {
+
   0%,
   100% {
     transform:
@@ -2450,12 +2694,20 @@ footer {
       105px;
   }
 
+  .brand {
+    font-size:
+      24px;
+  }
+
   .brand img {
     width:
-      54px;
+      68px;
 
     height:
-      54px;
+      68px;
+
+    border-radius:
+      17px;
   }
 
   h1 {
@@ -2511,12 +2763,20 @@ footer {
       285px;
   }
 
+  .brand {
+    font-size:
+      19px;
+  }
+
   .brand img {
     width:
-      46px;
+      52px;
 
     height:
-      46px;
+      52px;
+
+    border-radius:
+      14px;
   }
 
   .intro-card {
@@ -2564,18 +2824,21 @@ footer {
 
   .brand {
     font-size:
-      15px;
+      18px;
+
+    gap:
+      10px;
   }
 
   .brand img {
     width:
-      40px;
+      46px;
 
     height:
-      40px;
+      46px;
 
     border-radius:
-      11px;
+      12px;
   }
 
   .hero {
@@ -2751,6 +3014,19 @@ footer {
 
     font-size:
       10px;
+  }
+
+  .brand {
+    font-size:
+      17px;
+  }
+
+  .brand img {
+    width:
+      44px;
+
+    height:
+      44px;
   }
 
   h1 {
