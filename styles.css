@@ -79,13 +79,13 @@ textarea {
 
   filter: blur(95px);
 
-  opacity: 0.34;
+  opacity: 0.32;
 
   pointer-events: none;
 }
 
 .orb-1 {
-  left: -150px;
+  left: -160px;
   top: -160px;
 
   background:
@@ -93,8 +93,8 @@ textarea {
 }
 
 .orb-2 {
-  right: -170px;
-  bottom: -190px;
+  right: -180px;
+  bottom: -200px;
 
   background:
     rgba(37, 99, 235, 0.15);
@@ -107,7 +107,7 @@ textarea {
 
   pointer-events: none;
 
-  opacity: 0.16;
+  opacity: 0.14;
 
   background-image:
     linear-gradient(
@@ -125,7 +125,7 @@ textarea {
 
 
 /* =================================
-   MAIN
+   PAGE
    ================================= */
 
 .page {
@@ -160,7 +160,8 @@ textarea {
 
   justify-content: space-between;
 
-  padding: 26px 0;
+  padding:
+    18px 0;
 }
 
 .brand {
@@ -176,9 +177,10 @@ textarea {
 
   font-size: 24px;
 
-  font-weight: 800;
+  font-weight: 850;
 
-  letter-spacing: -0.03em;
+  letter-spacing:
+    -0.035em;
 }
 
 .brand img {
@@ -231,7 +233,7 @@ textarea {
     #a16207;
 
   background:
-    rgba(255, 255, 255, 0.75);
+    rgba(255, 255, 255, 0.74);
 }
 
 .top-download {
@@ -241,7 +243,7 @@ textarea {
 
   justify-content: center;
 
-  color: white;
+  color: #fff;
 
   background:
     linear-gradient(
@@ -251,8 +253,8 @@ textarea {
     );
 
   box-shadow:
-    0 11px 26px
-    rgba(37, 99, 235, 0.20);
+    0 11px 25px
+    rgba(37, 99, 235, 0.19);
 }
 
 .top-review:hover,
@@ -269,7 +271,7 @@ textarea {
 .hero {
   min-height:
     calc(
-      100vh - 110px
+      100vh - 88px
     );
 
   display: grid;
@@ -283,17 +285,17 @@ textarea {
   gap: 100px;
 
   padding:
-    24px 0 58px;
+    26px 0 58px;
 }
 
 .hero-copy {
   max-width:
-    720px;
+    730px;
 }
 
 
 /* =================================
-   HERO BADGE
+   BADGE
    ================================= */
 
 .badge {
@@ -332,7 +334,7 @@ textarea {
     850;
 
   letter-spacing:
-    0.13em;
+    .13em;
 }
 
 .badge span {
@@ -358,7 +360,7 @@ h1 {
   margin: 0;
 
   max-width:
-    720px;
+    730px;
 
   font-family:
     "Noto Sans Devanagari",
@@ -370,8 +372,8 @@ h1 {
   font-size:
     clamp(
       60px,
-      5.2vw,
-      82px
+      5.3vw,
+      84px
     );
 
   line-height:
@@ -414,7 +416,7 @@ h1 strong {
 
 .description {
   max-width:
-    610px;
+    620px;
 
   margin:
     25px 0 0;
@@ -472,8 +474,8 @@ h1 strong {
     none;
 
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transform .2s ease,
+    box-shadow .2s ease;
 }
 
 .download-button {
@@ -495,7 +497,7 @@ h1 strong {
 
   box-shadow:
     0 18px 38px
-    rgba(37, 99, 235, 0.23);
+    rgba(37, 99, 235, 0.22);
 }
 
 .download-button:hover {
@@ -563,7 +565,7 @@ h1 strong {
     11px;
 
   opacity:
-    0.72;
+    .72;
 }
 
 .review-button {
@@ -575,17 +577,17 @@ h1 strong {
 
   border:
     1px solid
-    rgba(245, 158, 11, 0.18);
+    rgba(245, 158, 11, .18);
 
   color:
     #475569;
 
   background:
-    rgba(255, 255, 255, 0.74);
+    rgba(255,255,255,.75);
 
   box-shadow:
     0 12px 25px
-    rgba(15, 23, 42, 0.06);
+    rgba(15,23,42,.06);
 }
 
 .review-button:hover {
@@ -594,7 +596,7 @@ h1 strong {
 
   box-shadow:
     0 16px 30px
-    rgba(15, 23, 42, 0.09);
+    rgba(15,23,42,.09);
 }
 
 .review-icon {
@@ -672,7 +674,7 @@ h1 strong {
     #687386;
 
   background:
-    rgba(255, 255, 255, 0.58);
+    rgba(255,255,255,.58);
 
   font-size:
     11px;
@@ -730,7 +732,7 @@ h1 strong {
 
 
 /* =================================
-   HERO PHONE
+   PHONE
    ================================= */
 
 .showcase {
@@ -766,8 +768,8 @@ h1 strong {
   background:
     radial-gradient(
       circle,
-      rgba(37, 99, 235, 0.15),
-      rgba(99, 102, 241, 0.05) 46%,
+      rgba(37,99,235,.15),
+      rgba(99,102,241,.05) 46%,
       transparent 73%
     );
 
@@ -792,7 +794,7 @@ h1 strong {
     50%;
 
   background:
-    rgba(15, 23, 42, 0.18);
+    rgba(15,23,42,.18);
 
   filter:
     blur(18px);
@@ -823,9 +825,9 @@ h1 strong {
 
   box-shadow:
     0 36px 76px
-    rgba(15, 23, 42, 0.24),
+    rgba(15,23,42,.24),
     0 0 0 1px
-    rgba(255, 255, 255, 0.06);
+    rgba(255,255,255,.06);
 
   transform:
     perspective(1250px)
@@ -892,8 +894,8 @@ h1 strong {
     cover;
 
   transition:
-    opacity 0.35s ease,
-    transform 0.35s ease;
+    opacity .35s ease,
+    transform .35s ease;
 }
 
 .phone-screen img.slide-out {
@@ -901,7 +903,7 @@ h1 strong {
     0;
 
   transform:
-    scale(0.97)
+    scale(.97)
     translateX(20px);
 }
 
@@ -931,7 +933,7 @@ h1 strong {
 
   border:
     1px solid
-    rgba(255, 255, 255, 0.82);
+    rgba(255,255,255,.82);
 
   border-radius:
     15px;
@@ -940,14 +942,14 @@ h1 strong {
     #334155;
 
   background:
-    rgba(255, 255, 255, 0.80);
+    rgba(255,255,255,.80);
 
   backdrop-filter:
     blur(13px);
 
   box-shadow:
     0 15px 32px
-    rgba(15, 23, 42, 0.08);
+    rgba(15,23,42,.08);
 
   font-size:
     11px;
@@ -1022,7 +1024,7 @@ h1 strong {
 
   box-shadow:
     0 0 0 5px
-    rgba(34, 197, 94, 0.10);
+    rgba(34,197,94,.10);
 }
 
 
@@ -1065,7 +1067,7 @@ h1 strong {
     999px;
 
   background:
-    rgba(255, 255, 255, 0.48);
+    rgba(255,255,255,.48);
 
   backdrop-filter:
     blur(8px);
@@ -1200,7 +1202,7 @@ h1 strong {
 
   grid-template-columns:
     auto
-    minmax(0, 1fr)
+    minmax(0,1fr)
     auto;
 
   align-items:
@@ -1214,20 +1216,20 @@ h1 strong {
 
   border:
     1px solid
-    rgba(99, 102, 241, 0.08);
+    rgba(99,102,241,.08);
 
   border-radius:
     30px;
 
   background:
-    rgba(255, 255, 255, 0.67);
+    rgba(255,255,255,.67);
 
   backdrop-filter:
     blur(14px);
 
   box-shadow:
     0 20px 55px
-    rgba(15, 23, 42, 0.05);
+    rgba(15,23,42,.05);
 }
 
 .intro-icon {
@@ -1354,7 +1356,7 @@ h1 strong {
   grid-template-columns:
     repeat(
       6,
-      minmax(0, 1fr)
+      minmax(0,1fr)
     );
 
   gap:
@@ -1391,11 +1393,11 @@ h1 strong {
     19px;
 
   background:
-    rgba(255, 255, 255, 0.73);
+    rgba(255,255,255,.73);
 
   box-shadow:
     0 11px 28px
-    rgba(15, 23, 42, 0.035);
+    rgba(15,23,42,.035);
 
   text-align:
     center;
@@ -1411,7 +1413,7 @@ h1 strong {
 
   box-shadow:
     0 16px 32px
-    rgba(15, 23, 42, 0.08);
+    rgba(15,23,42,.08);
 }
 
 .category-card b {
@@ -1536,10 +1538,7 @@ h1 strong {
     grid;
 
   grid-template-columns:
-    repeat(
-      4,
-      1fr
-    );
+    repeat(4,1fr);
 
   gap:
     16px;
@@ -1557,11 +1556,11 @@ h1 strong {
     23px;
 
   background:
-    rgba(255, 255, 255, 0.73);
+    rgba(255,255,255,.73);
 
   box-shadow:
     0 13px 32px
-    rgba(15, 23, 42, 0.04);
+    rgba(15,23,42,.04);
 }
 
 .benefit-icon {
@@ -1648,7 +1647,7 @@ h1 strong {
 
   grid-template-columns:
     50px
-    minmax(0, 1fr)
+    minmax(0,1fr)
     50px;
 
   align-items:
@@ -1712,13 +1711,13 @@ h1 strong {
 
   box-shadow:
     0 20px 45px
-    rgba(15, 23, 42, 0.13);
+    rgba(15,23,42,.13);
 
   opacity:
-    0.68;
+    .68;
 
   transform:
-    scale(0.94);
+    scale(.94);
 
   transition:
     transform .25s ease,
@@ -1735,7 +1734,7 @@ h1 strong {
 
   box-shadow:
     0 27px 55px
-    rgba(15, 23, 42, 0.18);
+    rgba(15,23,42,.18);
 }
 
 .screenshot-card img {
@@ -1772,11 +1771,11 @@ h1 strong {
     #475569;
 
   background:
-    rgba(255, 255, 255, 0.88);
+    rgba(255,255,255,.88);
 
   box-shadow:
     0 12px 28px
-    rgba(15, 23, 42, 0.09);
+    rgba(15,23,42,.09);
 
   font-size:
     30px;
@@ -1843,10 +1842,7 @@ h1 strong {
     grid;
 
   grid-template-columns:
-    repeat(
-      4,
-      1fr
-    );
+    repeat(4,1fr);
 
   gap:
     16px;
@@ -1867,7 +1863,7 @@ h1 strong {
     23px;
 
   background:
-    rgba(255, 255, 255, 0.75);
+    rgba(255,255,255,.75);
 }
 
 .step-number {
@@ -1967,53 +1963,61 @@ h1 strong {
    FINAL DOWNLOAD
    ================================= */
 
+/*
+   Cleaner CTA:
+   removes the old oversized blue
+   outer container and uses one
+   polished download card.
+*/
+
 .download-section {
   padding:
-    24px 0 82px;
+    22px 0 82px;
 }
 
 .download-section-content {
   display:
-    grid;
-
-  grid-template-columns:
-    auto
-    minmax(0, 1fr)
-    auto;
+    flex;
 
   align-items:
     center;
 
+  justify-content:
+    space-between;
+
   gap:
-    24px;
+    28px;
 
   padding:
-    26px 30px;
+    24px 28px;
+
+  border:
+    1px solid
+    rgba(37,99,235,.10);
 
   border-radius:
-    27px;
-
-  color:
-    white;
+    25px;
 
   background:
-    linear-gradient(
-      135deg,
-      #4f46e5,
-      #2563eb
-    );
+    rgba(255,255,255,.78);
+
+  backdrop-filter:
+    blur(16px);
 
   box-shadow:
-    0 24px 60px
-    rgba(37, 99, 235, 0.21);
+    0 20px 55px
+    rgba(15,23,42,.08);
 }
 
 .download-logo {
+  flex:
+    0 0 auto;
+
   width:
-    62px;
+    68px;
 
   height:
-    62px;
+    68px;
 
   display:
     flex;
@@ -2025,62 +2029,89 @@ h1 strong {
     center;
 
   border-radius:
-    17px;
+    18px;
 
   background:
-    rgba(255, 255, 255, 0.15);
+    #fff4c7;
+
+  box-shadow:
+    0 8px 20px
+    rgba(245,158,11,.10);
 }
 
 .download-logo img {
   width:
-    50px;
+    56px;
 
   height:
-    50px;
+    56px;
 
   border-radius:
-    14px;
+    15px;
 
   object-fit:
     cover;
 }
 
+.download-section-text {
+  flex:
+    1 1 auto;
+
+  min-width:
+    0;
+}
+
 .download-section-text span {
+  display:
+    block;
+
+  color:
+    var(--blue);
+
   font-size:
     9px;
 
   font-weight:
-    800;
+    850;
 
   letter-spacing:
     .12em;
-
-  opacity:
-    .72;
 }
 
 .download-section-text h2 {
   margin:
-    4px 0 0;
+    5px 0 0;
+
+  color:
+    var(--text);
 
   font-size:
-    27px;
+    28px;
+
+  line-height:
+    1.15;
 }
 
 .download-section-text p {
   margin:
-    4px 0 0;
+    6px 0 0;
+
+  color:
+    var(--muted);
 
   font-size:
-    12px;
-
-  opacity:
-    .75;
+    13px;
 }
 
 .final-download {
+  flex:
+    0 0 auto;
+
   min-width:
-    235px;
+    245px;
+
+  min-height:
+    64px;
 
   display:
     grid;
@@ -2093,34 +2124,51 @@ h1 strong {
     center;
 
   gap:
-    11px;
+    12px;
 
   padding:
-    13px 17px;
+    10px 18px 10px 11px;
 
   border-radius:
-    16px;
+    17px;
 
   color:
-    var(--text);
+    white;
 
   background:
-    white;
+    linear-gradient(
+      135deg,
+      var(--blue),
+      var(--purple)
+    );
 
   text-decoration:
     none;
 
   box-shadow:
-    0 13px 30px
-    rgba(15, 23, 42, .14);
+    0 15px 32px
+    rgba(37,99,235,.22);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.final-download:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 20px 40px
+    rgba(37,99,235,.28);
 }
 
 .final-download > span {
   width:
-    40px;
+    42px;
 
   height:
-    40px;
+    42px;
 
   display:
     flex;
@@ -2132,21 +2180,24 @@ h1 strong {
     center;
 
   border-radius:
-    11px;
+    12px;
 
   color:
     white;
 
   background:
-    var(--blue);
+    rgba(255,255,255,.15);
 
   font-size:
-    19px;
+    20px;
 }
 
 .final-download strong {
   display:
     block;
+
+  color:
+    white;
 
   font-size:
     15px;
@@ -2157,10 +2208,10 @@ h1 strong {
     block;
 
   margin-top:
-    2px;
+    3px;
 
   color:
-    #7b8495;
+    rgba(255,255,255,.72);
 
   font-size:
     10px;
@@ -2239,7 +2290,7 @@ footer {
     20px;
 
   background:
-    rgba(15, 23, 42, .48);
+    rgba(15,23,42,.48);
 
   backdrop-filter:
     blur(10px);
@@ -2612,6 +2663,7 @@ footer {
    ================================= */
 
 @keyframes pulse {
+
   0%,
   100% {
     transform:
@@ -2631,6 +2683,7 @@ footer {
 }
 
 @keyframes floatPhone {
+
   0%,
   100% {
     transform:
@@ -2648,6 +2701,7 @@ footer {
 }
 
 @keyframes floatCard {
+
   0%,
   100% {
     transform:
@@ -2661,6 +2715,7 @@ footer {
 }
 
 @keyframes floatCard2 {
+
   0%,
   100% {
     transform:
@@ -2690,7 +2745,7 @@ footer {
 
   .hero {
     grid-template-columns:
-      minmax(0, 1fr)
+      minmax(0,1fr)
       400px;
 
     gap:
@@ -2750,18 +2805,18 @@ footer {
       1 / -1;
 
     grid-template-columns:
-      repeat(2, 1fr);
+      repeat(2,1fr);
   }
 
   .category-grid {
     grid-template-columns:
-      repeat(4, 1fr);
+      repeat(4,1fr);
   }
 
   .benefit-grid,
   .install-grid {
     grid-template-columns:
-      repeat(2, 1fr);
+      repeat(2,1fr);
   }
 }
 
@@ -2909,7 +2964,7 @@ footer {
 
   .category-grid {
     grid-template-columns:
-      repeat(3, 1fr);
+      repeat(3,1fr);
   }
 
   .benefit-grid,
@@ -2937,11 +2992,14 @@ footer {
   }
 
   .download-section-content {
-    grid-template-columns:
-      1fr;
+    flex-direction:
+      column;
 
     text-align:
       center;
+
+    padding:
+      26px 22px;
   }
 
   .download-logo {
@@ -2949,7 +3007,18 @@ footer {
       0 auto;
   }
 
+  .download-section-text {
+    width:
+      100%;
+  }
+
   .final-download {
+    width:
+      min(
+        100%,
+        300px
+      );
+
     margin:
       0 auto;
   }
@@ -3068,7 +3137,7 @@ footer {
 
   .category-grid {
     grid-template-columns:
-      repeat(2, 1fr);
+      repeat(2,1fr);
   }
 
   .category-card {
@@ -3084,7 +3153,7 @@ footer {
   .screenshot-showcase {
     grid-template-columns:
       34px
-      minmax(0, 1fr)
+      minmax(0,1fr)
       34px;
 
     gap:
