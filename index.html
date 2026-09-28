@@ -1,882 +1,1466 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta
-    name="theme-color"
-    content="#f5f7ff"
-  >
-
-  <meta
-    name="description"
-    content="Download the Daily Facts Android app."
-  >
-
-  <link
-    rel="icon"
-    href="assets/logo.png"
-  >
-
-  <title>Daily Facts</title>
-
-  <link
-    rel="stylesheet"
-    href="styles.css"
-  >
-</head>
-
-<body>
-
-  <div class="bg-orb orb-1"></div>
-  <div class="bg-orb orb-2"></div>
-  <div class="bg-grid"></div>
-
-  <main class="page">
-
-    <!-- TOP BAR -->
-
-    <header class="topbar">
-
-      <a
-        class="brand"
-        href="#"
-      >
-        <img
-          src="assets/logo.png"
-          alt="Daily Facts logo"
-        >
-
-        <span>Daily Facts</span>
-      </a>
-
-      <div class="top-actions">
-
-        <button
-          id="openReviewTop"
-          class="top-review"
-          type="button"
-        >
-          ★ Review
-        </button>
-
-        <a
-          href="#downloadButton"
-          class="top-download"
-        >
-          Download APK
-        </a>
-
-      </div>
-
-    </header>
-
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-      <!-- LEFT -->
-
-      <div class="hero-copy">
-
-        <div class="badge">
-          <span></span>
-          ANDROID APP
-        </div>
-
-
-        <h1>
-          हर दिन
-          <strong>कुछ नया जानें</strong>
-        </h1>
-
-
-        <p class="description">
-          Discover interesting facts about science, history,
-          nature, technology, human body, space and much more.
-        </p>
-
-
-        <div class="hero-buttons">
-
-          <a
-            id="downloadButton"
-            class="download-button"
-            href="https://github.com/creativeAnil/daily-facts-content/releases/download/v1.0.9/daily-facts-v1.0.9.apk"
-          >
-
-            <span class="download-icon">
-              ↓
-            </span>
-
-            <span class="download-text">
-              <b>Download APK</b>
-              <small>Free for Android</small>
-            </span>
-
-          </a>
-
-
-          <button
-            id="openReview"
-            class="review-button"
-            type="button"
-          >
-
-            <span class="review-icon">
-              ★
-            </span>
-
-            <span class="review-text">
-              <b>Rate & Review</b>
-              <small>Tell us what you think</small>
-            </span>
-
-          </button>
-
-        </div>
-
-
-        <div class="features">
-
-          <div>
-            <span class="feature-icon blue">✦</span>
-            <span>Interesting facts</span>
-          </div>
-
-          <div>
-            <span class="feature-icon green">◈</span>
-            <span>Fresh discoveries</span>
-          </div>
-
-          <div>
-            <span class="feature-icon orange">✓</span>
-            <span>Free to download</span>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- RIGHT -->
-
-      <div class="showcase">
-
-        <div class="showcase-glow"></div>
-
-
-        <!-- Small card -->
-
-        <div class="floating-card floating-top">
-
-          <span class="floating-symbol">
-            ✦
-          </span>
-
-          <span>
-            Learn something new
-          </span>
-
-        </div>
-
-
-        <!-- Phone -->
-
-        <div class="phone-shadow"></div>
-
-        <div class="phone">
-
-          <div class="phone-notch"></div>
-
-          <div class="phone-screen">
-
-            <img
-              id="mainScreenshot"
-              src="assets/app-screen-1.jpg"
-              alt="Daily Facts app screenshot"
-            >
-
-          </div>
-
-        </div>
-
-
-        <!-- Bottom floating card -->
-
-        <div class="floating-card floating-bottom">
-
-          <span class="online-dot"></span>
-
-          <span>
-            New fact every day
-          </span>
-
-        </div>
-
-
-        <!-- Carousel dots -->
-
-        <div
-          class="slider-dots"
-          id="sliderDots"
-        >
-
-          <button
-            type="button"
-            class="active"
-            data-slide="0"
-            aria-label="Screenshot 1"
-          ></button>
-
-          <button
-            type="button"
-            data-slide="1"
-            aria-label="Screenshot 2"
-          ></button>
-
-          <button
-            type="button"
-            data-slide="2"
-            aria-label="Screenshot 3"
-          ></button>
-
-          <button
-            type="button"
-            data-slide="3"
-            aria-label="Screenshot 4"
-          ></button>
-
-          <button
-            type="button"
-            data-slide="4"
-            aria-label="Screenshot 5"
-          ></button>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-      <span>
-        © <span id="year"></span> Daily Facts
-      </span>
-
-      <a href="mailto:dailyfacts.support@gmail.com">
-        Support
-      </a>
-
-    </footer>
-
-  </main>
-
-
-  <!-- REVIEW MODAL -->
-
-  <div
-    id="reviewOverlay"
-    class="review-overlay"
-    aria-hidden="true"
-  >
-
-    <div
-      class="review-modal"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="reviewTitle"
-    >
-
-      <button
-        id="closeReview"
-        class="close-review"
-        type="button"
-        aria-label="Close"
-      >
-        ×
-      </button>
-
-
-      <div class="review-header">
-
-        <div class="review-logo">
-          ★
-        </div>
-
-        <h2 id="reviewTitle">
-          Rate Daily Facts
-        </h2>
-
-        <p>
-          We'd love to hear your feedback.
-        </p>
-
-      </div>
-
-
-      <div class="stars">
-
-        <button
-          type="button"
-          class="star"
-          data-rating="1"
-        >
-          ★
-        </button>
-
-        <button
-          type="button"
-          class="star"
-          data-rating="2"
-        >
-          ★
-        </button>
-
-        <button
-          type="button"
-          class="star"
-          data-rating="3"
-        >
-          ★
-        </button>
-
-        <button
-          type="button"
-          class="star"
-          data-rating="4"
-        >
-          ★
-        </button>
-
-        <button
-          type="button"
-          class="star"
-          data-rating="5"
-        >
-          ★
-        </button>
-
-      </div>
-
-
-      <div
-        id="ratingMessage"
-        class="rating-message"
-      >
-        Select a rating
-      </div>
-
-
-      <label for="reviewName">
-        Name
-        <small>optional</small>
-      </label>
-
-      <input
-        id="reviewName"
-        type="text"
-        maxlength="60"
-        placeholder="Your name"
-      >
-
-
-      <label for="reviewMessage">
-        Review
-      </label>
-
-      <textarea
-        id="reviewMessage"
-        maxlength="1000"
-        placeholder="Tell us about your experience..."
-      ></textarea>
-
-
-      <button
-        id="sendReview"
-        class="send-review"
-        type="button"
-      >
-        Send Review
-      </button>
-
-
-      <p class="review-note">
-        Your email app will open with your review prepared.
-      </p>
-
-    </div>
-
-  </div>
-
-
-  <script>
-
-    /* --------------------------------
-       YEAR
-       -------------------------------- */
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-
-
-    /* --------------------------------
-       SCREENSHOT SLIDER
-       -------------------------------- */
-
-    const screenshots = [
-      "assets/app-screen-1.jpg",
-      "assets/app-screen-2.jpg",
-      "assets/app-screen-3.jpg",
-      "assets/app-screen-4.jpg",
-      "assets/app-screen-5.jpg"
-    ];
-
-    const mainScreenshot =
-      document.getElementById("mainScreenshot");
-
-    const dots =
-      document.querySelectorAll(
-        "#sliderDots button"
-      );
-
-    let currentSlide = 0;
-
-
-    /* Preload */
-
-    screenshots.forEach((src) => {
-
-      const image = new Image();
-
-      image.src = src;
-
-    });
-
-
-    function showSlide(index) {
-
-      currentSlide = index;
-
-      mainScreenshot.classList.add(
-        "slide-out"
-      );
-
-
-      setTimeout(() => {
-
-        mainScreenshot.src =
-          screenshots[currentSlide];
-
-        mainScreenshot.classList.remove(
-          "slide-out"
-        );
-
-      }, 350);
-
-
-      dots.forEach((dot, i) => {
-
-        dot.classList.toggle(
-          "active",
-          i === currentSlide
-        );
-
-      });
-
-    }
-
-
-    dots.forEach((dot) => {
-
-      dot.addEventListener(
-        "click",
-        () => {
-
-          const index =
-            Number(
-              dot.dataset.slide
-            );
-
-          showSlide(index);
-
-          resetSlider();
-
-        }
-      );
-
-    });
-
-
-    let sliderTimer;
-
-
-    function startSlider() {
-
-      sliderTimer =
-        setInterval(() => {
-
-          const next =
-            (currentSlide + 1) %
-            screenshots.length;
-
-          showSlide(next);
-
-        }, 3500);
-
-    }
-
-
-    function resetSlider() {
-
-      clearInterval(sliderTimer);
-
-      startSlider();
-
-    }
-
-
-    startSlider();
-
-
-    /* --------------------------------
-       LATEST GITHUB APK
-       -------------------------------- */
-
-    const releaseAPI =
-      "https://api.github.com/repos/creativeAnil/daily-facts-content/releases/latest";
-
-    const downloadButton =
-      document.getElementById("downloadButton");
-
-
-    async function loadLatestAPK() {
-
-      try {
-
-        const response =
-          await fetch(
-            releaseAPI,
-            {
-              headers: {
-                "Accept":
-                  "application/vnd.github+json"
-              }
-            }
-          );
-
-
-        if (!response.ok) {
-
-          throw new Error(
-            "GitHub request failed"
-          );
-
-        }
-
-
-        const release =
-          await response.json();
-
-
-        const apk =
-          release.assets.find(
-            (asset) =>
-              asset.name
-                .toLowerCase()
-                .endsWith(".apk")
-          );
-
-
-        if (apk) {
-
-          downloadButton.href =
-            apk.browser_download_url;
-
-        }
-
-      } catch (error) {
-
-        console.error(
-          "Could not load latest APK:",
-          error
-        );
-
-      }
-
-    }
-
-
-    loadLatestAPK();
-
-
-    /* --------------------------------
-       REVIEW MODAL
-       -------------------------------- */
-
-    const overlay =
-      document.getElementById(
-        "reviewOverlay"
-      );
-
-    const openReview =
-      document.getElementById(
-        "openReview"
-      );
-
-    const openReviewTop =
-      document.getElementById(
-        "openReviewTop"
-      );
-
-    const closeReview =
-      document.getElementById(
-        "closeReview"
-      );
-
-
-    function openReviewModal() {
-
-      overlay.classList.add("show");
-
-      overlay.setAttribute(
-        "aria-hidden",
-        "false"
-      );
-
-      document.body.classList.add(
-        "modal-open"
-      );
-
-    }
-
-
-    function closeReviewModal() {
-
-      overlay.classList.remove("show");
-
-      overlay.setAttribute(
-        "aria-hidden",
-        "true"
-      );
-
-      document.body.classList.remove(
-        "modal-open"
-      );
-
-    }
-
-
-    openReview.addEventListener(
-      "click",
-      openReviewModal
+:root {
+  --bg: #f5f7ff;
+  --text: #0f172a;
+  --muted: #667085;
+  --blue: #2563eb;
+  --purple: #6366f1;
+  --green: #22c55e;
+  --orange: #f59e0b;
+  --line: rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: var(--text);
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8f9ff 0%,
+      #f1f5ff 48%,
+      #f9faff 100%
+    );
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+
+/* =================================
+   BACKGROUND
+   ================================= */
+
+.bg-orb {
+  position: fixed;
+
+  width: 440px;
+  height: 440px;
+
+  border-radius: 50%;
+
+  filter: blur(90px);
+
+  pointer-events: none;
+
+  opacity: 0.38;
+}
+
+.orb-1 {
+  top: -180px;
+  left: -130px;
+
+  background:
+    rgba(99, 102, 241, 0.22);
+}
+
+.orb-2 {
+  right: -190px;
+  bottom: -220px;
+
+  background:
+    rgba(37, 99, 235, 0.15);
+}
+
+.bg-grid {
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.18;
+
+  background-image:
+    linear-gradient(
+      rgba(15, 23, 42, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.025) 1px,
+      transparent 1px
     );
 
+  background-size: 46px 46px;
+}
 
-    openReviewTop.addEventListener(
-      "click",
-      openReviewModal
+
+/* =================================
+   MAIN PAGE
+   ================================= */
+
+.page {
+  position: relative;
+
+  z-index: 2;
+
+  width:
+    min(
+      1240px,
+      calc(100% - 64px)
     );
 
+  min-height: 100vh;
 
-    closeReview.addEventListener(
-      "click",
-      closeReviewModal
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =================================
+   TOP BAR
+   ================================= */
+
+.topbar {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 24px 0;
+}
+
+.brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--text);
+
+  text-decoration: none;
+
+  font-size: 16px;
+
+  font-weight: 800;
+}
+
+.brand img {
+  width: 38px;
+  height: 38px;
+
+  display: block;
+
+  border-radius: 11px;
+}
+
+.top-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+.top-review,
+.top-download {
+  min-height: 40px;
+
+  padding: 0 15px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  text-decoration: none;
+}
+
+.top-review {
+  border:
+    1px solid
+    rgba(245, 158, 11, 0.18);
+
+  color: #a16207;
+
+  background:
+    rgba(255, 255, 255, 0.68);
+}
+
+.top-download {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--blue),
+      var(--purple)
     );
 
+  box-shadow:
+    0 9px 22px
+    rgba(37, 99, 235, 0.18);
+}
 
-    overlay.addEventListener(
-      "click",
-      (event) => {
 
-        if (
-          event.target === overlay
-        ) {
+/* =================================
+   HERO - DESKTOP
+   ================================= */
 
-          closeReviewModal();
+.hero {
+  flex: 1;
 
-        }
-
-      }
+  min-height:
+    calc(
+      100vh - 92px
     );
 
+  display: grid;
 
-    document.addEventListener(
-      "keydown",
-      (event) => {
+  grid-template-columns:
+    minmax(0, 1fr)
+    470px;
 
-        if (
-          event.key === "Escape"
-        ) {
+  gap: 90px;
 
-          closeReviewModal();
+  align-items: center;
 
-        }
+  padding:
+    20px 0 45px;
+}
 
-      }
+
+/* =================================
+   LEFT CONTENT
+   ================================= */
+
+.hero-copy {
+  max-width: 650px;
+}
+
+.badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding:
+    8px 12px;
+
+  margin-bottom: 20px;
+
+  border:
+    1px solid
+    rgba(37, 99, 235, 0.11);
+
+  border-radius: 999px;
+
+  color:
+    #64748b;
+
+  background:
+    rgba(255, 255, 255, 0.64);
+
+  backdrop-filter:
+    blur(10px);
+
+  font-size: 10px;
+
+  font-weight: 850;
+
+  letter-spacing:
+    0.12em;
+}
+
+.badge span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background:
+    var(--green);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(34, 197, 94, 0.1);
+}
+
+h1 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      58px,
+      5vw,
+      74px
     );
 
+  line-height: 1.03;
 
-    /* --------------------------------
-       RATING
-       -------------------------------- */
+  letter-spacing:
+    -0.052em;
 
-    const stars =
-      document.querySelectorAll(
-        ".star"
+  font-weight: 850;
+}
+
+h1 strong {
+  display: block;
+
+  font-weight: 850;
+
+  background:
+    linear-gradient(
+      90deg,
+      #111827 0%,
+      var(--blue) 58%,
+      var(--purple) 100%
+    );
+
+  -webkit-background-clip:
+    text;
+
+  background-clip:
+    text;
+
+  color: transparent;
+}
+
+.description {
+  max-width: 550px;
+
+  margin:
+    21px 0 0;
+
+  color:
+    var(--muted);
+
+  font-size: 17px;
+
+  line-height: 1.7;
+}
+
+
+/* =================================
+   HERO BUTTONS
+   ================================= */
+
+.hero-buttons {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 11px;
+
+  margin-top: 26px;
+}
+
+.download-button,
+.review-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  min-height: 60px;
+
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  text-decoration: none;
+}
+
+.download-button {
+  min-width: 225px;
+
+  padding:
+    8px 19px 8px 11px;
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--blue),
+      var(--purple)
+    );
+
+  box-shadow:
+    0 16px 32px
+    rgba(37, 99, 235, 0.21);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.download-button:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 21px 38px
+    rgba(37, 99, 235, 0.27);
+}
+
+.download-icon,
+.review-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 12px;
+
+  font-size: 18px;
+}
+
+.download-icon {
+  background:
+    rgba(255, 255, 255, 0.15);
+}
+
+.download-text,
+.review-text {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 2px;
+}
+
+.download-text b,
+.review-text b {
+  font-size: 15px;
+}
+
+.download-text small,
+.review-text small {
+  font-size: 10px;
+
+  opacity: 0.72;
+}
+
+.review-button {
+  min-width: 198px;
+
+  padding:
+    8px 17px 8px 11px;
+
+  border:
+    1px solid
+    rgba(245, 158, 11, 0.18);
+
+  color:
+    #475569;
+
+  background:
+    rgba(255, 255, 255, 0.7);
+
+  box-shadow:
+    0 10px 23px
+    rgba(15, 23, 42, 0.05);
+}
+
+
+/* =================================
+   FEATURE PILLS
+   ================================= */
+
+.features {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 19px;
+}
+
+.features > div {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding:
+    7px 10px;
+
+  border:
+    1px solid
+    var(--line);
+
+  border-radius: 999px;
+
+  color:
+    #687386;
+
+  background:
+    rgba(255, 255, 255, 0.55);
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.feature-icon {
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 7px;
+
+  font-size: 11px;
+}
+
+.feature-icon.blue {
+  color: #2563eb;
+  background: #e9f0ff;
+}
+
+.feature-icon.green {
+  color: #16a34a;
+  background: #eaf9ef;
+}
+
+.feature-icon.orange {
+  color: #d97706;
+  background: #fff5df;
+}
+
+
+/* =================================
+   PHONE SHOWCASE - DESKTOP
+   ================================= */
+
+.showcase {
+  position: relative;
+
+  min-height: 650px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.showcase-glow {
+  position: absolute;
+
+  width: 470px;
+  height: 470px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(37, 99, 235, 0.14),
+      rgba(99, 102, 241, 0.045) 46%,
+      transparent 73%
+    );
+
+  animation:
+    pulse 5s ease-in-out infinite;
+}
+
+.phone-shadow {
+  position: absolute;
+
+  bottom: 61px;
+
+  width: 270px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(15, 23, 42, 0.18);
+
+  filter:
+    blur(17px);
+}
+
+.phone {
+  position: relative;
+
+  z-index: 4;
+
+  width: 310px;
+
+  padding: 9px;
+
+  border-radius: 38px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #2d313b,
+      #0f1115
+    );
+
+  box-shadow:
+    0 30px 65px
+    rgba(15, 23, 42, 0.23),
+    0 0 0 1px
+    rgba(255, 255, 255, 0.06);
+
+  transform:
+    perspective(1150px)
+    rotateY(-5deg);
+
+  animation:
+    floatPhone 5s ease-in-out infinite;
+}
+
+.phone-notch {
+  position: absolute;
+
+  top: 6px;
+  left: 50%;
+
+  width: 84px;
+  height: 16px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    0 0 10px 10px;
+
+  background:
+    #08090c;
+
+  z-index: 3;
+}
+
+.phone-screen {
+  overflow: hidden;
+
+  border-radius: 30px;
+
+  aspect-ratio:
+    9 / 19.5;
+
+  background:
+    #0f1115;
+}
+
+.phone-screen img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.phone-screen img.slide-out {
+  opacity: 0;
+
+  transform:
+    scale(0.97)
+    translateX(18px);
+}
+
+
+/* =================================
+   FLOATING CARDS
+   ================================= */
+
+.floating-card {
+  position: absolute;
+
+  z-index: 6;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding:
+    10px 12px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.78);
+
+  border-radius: 13px;
+
+  background:
+    rgba(255, 255, 255, 0.78);
+
+  backdrop-filter:
+    blur(12px);
+
+  box-shadow:
+    0 13px 28px
+    rgba(15, 23, 42, 0.07);
+
+  color:
+    #334155;
+
+  font-size: 10px;
+
+  font-weight: 750;
+}
+
+.floating-top {
+  top: 116px;
+  left: -12px;
+
+  animation:
+    floatCard 4.5s ease-in-out infinite;
+}
+
+.floating-bottom {
+  right: -8px;
+  bottom: 108px;
+
+  animation:
+    floatCard2 4.8s ease-in-out infinite;
+}
+
+.floating-symbol {
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 8px;
+
+  color:
+    #f59e0b;
+
+  background:
+    #fff6dc;
+}
+
+.online-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background:
+    var(--green);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(34, 197, 94, 0.1);
+}
+
+
+/* =================================
+   SLIDER DOTS
+   ================================= */
+
+.slider-dots {
+  position: absolute;
+
+  bottom: 47px;
+  left: 50%;
+
+  z-index: 8;
+
+  transform:
+    translateX(-50%);
+
+  display: flex;
+
+  gap: 6px;
+}
+
+.slider-dots button {
+  width: 6px;
+  height: 6px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background:
+    #cbd5e1;
+
+  cursor: pointer;
+}
+
+.slider-dots button.active {
+  width: 18px;
+
+  border-radius: 999px;
+
+  background:
+    var(--blue);
+}
+
+
+/* =================================
+   FOOTER
+   ================================= */
+
+footer {
+  padding:
+    14px 0 20px;
+
+  border-top:
+    1px solid
+    var(--line);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  color:
+    #7b8495;
+
+  font-size: 11px;
+}
+
+footer a {
+  color:
+    #59657a;
+
+  text-decoration: none;
+}
+
+
+/* =================================
+   REVIEW MODAL
+   ================================= */
+
+.review-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 100;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background:
+    rgba(15, 23, 42, 0.48);
+
+  backdrop-filter:
+    blur(10px);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.review-overlay.show {
+  opacity: 1;
+
+  visibility: visible;
+}
+
+.review-modal {
+  position: relative;
+
+  width:
+    min(
+      100%,
+      410px
+    );
+
+  padding:
+    25px;
+
+  border-radius: 23px;
+
+  background:
+    rgba(255, 255, 255, 0.97);
+
+  box-shadow:
+    0 30px 80px
+    rgba(15, 23, 42, 0.24);
+
+  transform:
+    translateY(12px)
+    scale(0.98);
+
+  transition:
+    transform 0.25s ease;
+}
+
+.review-overlay.show .review-modal {
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+.close-review {
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+
+  width: 34px;
+  height: 34px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background:
+    #f1f5f9;
+
+  color:
+    #64748b;
+
+  font-size: 23px;
+
+  cursor: pointer;
+}
+
+.review-header {
+  text-align: center;
+}
+
+.review-logo {
+  width: 48px;
+  height: 48px;
+
+  margin:
+    0 auto 11px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 14px;
+
+  color:
+    #f59e0b;
+
+  background:
+    #fff5d7;
+
+  font-size: 23px;
+}
+
+.review-header h2 {
+  margin: 0;
+
+  font-size: 23px;
+}
+
+.review-header p {
+  margin:
+    6px 0 0;
+
+  color:
+    var(--muted);
+
+  font-size: 12px;
+}
+
+.stars {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 4px;
+
+  margin-top: 19px;
+}
+
+.star {
+  width: 42px;
+  height: 42px;
+
+  border: 0;
+
+  border-radius: 11px;
+
+  background:
+    #f8fafc;
+
+  color:
+    #cbd5e1;
+
+  font-size: 23px;
+
+  cursor: pointer;
+}
+
+.star:hover,
+.star.selected {
+  color:
+    #f59e0b;
+
+  background:
+    #fff5d7;
+}
+
+.rating-message {
+  min-height: 18px;
+
+  margin:
+    8px 0 14px;
+
+  text-align: center;
+
+  color:
+    #7b8495;
+
+  font-size: 11px;
+}
+
+.review-modal label {
+  display: block;
+
+  margin:
+    11px 0 6px;
+
+  color:
+    #475569;
+
+  font-size: 11px;
+
+  font-weight: 750;
+}
+
+.review-modal label small {
+  color:
+    #94a3b8;
+
+  font-weight: 500;
+}
+
+.review-modal input,
+.review-modal textarea {
+  width: 100%;
+
+  border:
+    1px solid
+    #e2e8f0;
+
+  border-radius: 11px;
+
+  outline: none;
+
+  color:
+    #0f172a;
+
+  background:
+    #f8fafc;
+
+  font-size: 13px;
+}
+
+.review-modal input {
+  height: 43px;
+
+  padding:
+    0 12px;
+}
+
+.review-modal textarea {
+  min-height: 92px;
+
+  padding:
+    11px 12px;
+
+  resize:
+    vertical;
+}
+
+.review-modal input:focus,
+.review-modal textarea:focus {
+  border-color:
+    rgba(37, 99, 235, 0.42);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(37, 99, 235, 0.07);
+
+  background:
+    #fff;
+}
+
+.send-review {
+  width: 100%;
+
+  min-height: 47px;
+
+  margin-top: 15px;
+
+  border: 0;
+
+  border-radius: 11px;
+
+  color:
+    #fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--blue),
+      var(--purple)
+    );
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.review-note {
+  margin:
+    8px 0 0;
+
+  text-align: center;
+
+  color:
+    #94a3b8;
+
+  font-size: 9px;
+}
+
+
+/* =================================
+   ANIMATIONS
+   ================================= */
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(0.96);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes floatPhone {
+  0%,
+  100% {
+    transform:
+      perspective(1150px)
+      rotateY(-5deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      perspective(1150px)
+      rotateY(-5deg)
+      translateY(-7px);
+  }
+}
+
+@keyframes floatCard {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes floatCard2 {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+
+/* =================================
+   TABLET
+   ================================= */
+
+@media (max-width: 1000px) {
+
+  .page {
+    width:
+      min(
+        1100px,
+        calc(100% - 40px)
       );
+  }
 
-    const ratingMessage =
-      document.getElementById(
-        "ratingMessage"
+  .hero {
+    grid-template-columns:
+      minmax(0, 1fr)
+      390px;
+
+    gap:
+      45px;
+  }
+
+  .phone {
+    width:
+      285px;
+  }
+
+  .floating-top {
+    left:
+      -5px;
+  }
+
+  .floating-bottom {
+    right:
+      -5px;
+  }
+}
+
+
+/* =================================
+   MOBILE / PHONE
+   ================================= */
+
+@media (max-width: 800px) {
+
+  .page {
+    width:
+      calc(100% - 28px);
+  }
+
+  .hero {
+    grid-template-columns:
+      1fr;
+
+    min-height:
+      auto;
+
+    gap:
+      26px;
+
+    padding:
+      24px 0 36px;
+  }
+
+  .hero-copy {
+    max-width:
+      680px;
+
+    margin:
+      0 auto;
+
+    text-align:
+      center;
+  }
+
+  .badge {
+    margin-left:
+      auto;
+
+    margin-right:
+      auto;
+  }
+
+  .description {
+    margin-left:
+      auto;
+
+    margin-right:
+      auto;
+  }
+
+  .hero-buttons {
+    justify-content:
+      center;
+  }
+
+  .features {
+    justify-content:
+      center;
+  }
+
+  .showcase {
+    min-height:
+      580px;
+  }
+
+  .phone {
+    width:
+      min(
+        74vw,
+        290px
       );
+  }
+
+  .showcase-glow {
+    width:
+      370px;
+
+    height:
+      370px;
+  }
+
+  .floating-top {
+    left:
+      0;
+    top:
+      62px;
+  }
+
+  .floating-bottom {
+    right:
+      0;
+    bottom:
+      68px;
+  }
+}
 
 
-    let selectedRating = 0;
+/* =================================
+   SMALL PHONE
+   ================================= */
 
+@media (max-width: 560px) {
 
-    const ratingText = {
-      1: "We'll work to improve.",
-      2: "Thanks for the feedback.",
-      3: "Thanks for trying Daily Facts.",
-      4: "Great! We're glad you like it.",
-      5: "Awesome! Thank you."
-    };
+  .topbar {
+    padding:
+      17px 0;
+  }
 
+  .top-review,
+  .top-download {
+    padding:
+      0 10px;
 
-    stars.forEach((star) => {
+    font-size:
+      10px;
+  }
 
-      star.addEventListener(
-        "click",
-        () => {
+  h1 {
+    font-size:
+      45px;
+  }
 
-          selectedRating =
-            Number(
-              star.dataset.rating
-            );
+  .description {
+    font-size:
+      15px;
+  }
 
+  .hero-buttons {
+    flex-direction:
+      column;
+  }
 
-          stars.forEach(
-            (item) => {
+  .download-button,
+  .review-button {
+    width:
+      100%;
 
-              const value =
-                Number(
-                  item.dataset.rating
-                );
+    justify-content:
+      flex-start;
+  }
 
-              item.classList.toggle(
-                "selected",
-                value <= selectedRating
-              );
+  .showcase {
+    min-height:
+      520px;
+  }
 
-            }
-          );
-
-
-          ratingMessage.textContent =
-            ratingText[selectedRating];
-
-        }
+  .phone {
+    width:
+      min(
+        74vw,
+        280px
       );
+  }
 
-    });
+  .showcase-glow {
+    width:
+      340px;
 
+    height:
+      340px;
+  }
 
-    /* --------------------------------
-       SEND REVIEW
-       -------------------------------- */
+  .floating-card {
+    font-size:
+      9px;
 
-    document
-      .getElementById("sendReview")
-      .addEventListener(
-        "click",
-        () => {
+    padding:
+      8px 10px;
+  }
 
-          const name =
-            document
-              .getElementById("reviewName")
-              .value
-              .trim() ||
-            "Anonymous";
-
-
-          const message =
-            document
-              .getElementById("reviewMessage")
-              .value
-              .trim();
-
-
-          if (selectedRating === 0) {
-
-            ratingMessage.textContent =
-              "Please select a star rating.";
-
-            return;
-
-          }
-
-
-          if (!message) {
-
-            document
-              .getElementById(
-                "reviewMessage"
-              )
-              .focus();
-
-            return;
-
-          }
-
-
-          const starsText =
-            "★".repeat(
-              selectedRating
-            ) +
-            "☆".repeat(
-              5 - selectedRating
-            );
-
-
-          const subject =
-            encodeURIComponent(
-              "Daily Facts Review - " +
-              starsText
-            );
-
-
-          const body =
-            encodeURIComponent(
-              "Daily Facts Review\n\n" +
-              "Rating: " +
-              starsText +
-              "\n\n" +
-              "Name: " +
-              name +
-              "\n\n" +
-              "Review:\n" +
-              message
-            );
-
-
-          window.location.href =
-            "mailto:dailyfacts.support@gmail.com" +
-            "?subject=" +
-            subject +
-            "&body=" +
-            body;
-
-        }
-      );
-
-  </script>
-
-</body>
-</html>
+  footer {
+    padding:
+      12px 0 17px;
+  }
+}
