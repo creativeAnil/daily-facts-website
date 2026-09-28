@@ -9,11 +9,19 @@
   <title>Daily Facts</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <main class="page">
+
     <section class="hero">
+
       <div class="copy">
-        <img class="logo" src="assets/logo.png" alt="Daily Facts logo">
+
+        <img
+          class="logo"
+          src="assets/logo.png"
+          alt="Daily Facts logo"
+        >
 
         <p class="kicker">ANDROID APP</p>
 
@@ -26,35 +34,242 @@
           human body, space and more.
         </p>
 
-        <a class="download" href="https://github.com/creativeAnil/daily-facts-content/releases/download/v1.0.9/daily-facts-v1.0.9.apk">
+        <a
+          id="downloadButton"
+          class="download"
+          href="#"
+          target="_blank"
+          rel="noopener"
+        >
           Download APK
         </a>
 
-        <p class="version">Latest version: <strong>1.0.9</strong> · Android</p>
+        <p class="version">
+          Latest version:
+          <strong id="version">Loading...</strong>
+          · Android
+        </p>
 
-        <a class="release" href="https://github.com/creativeAnil/daily-facts-content/releases/tag/v1.0.9" target="_blank" rel="noopener">
+        <a
+          id="releaseLink"
+          class="release"
+          href="#"
+          target="_blank"
+          rel="noopener"
+        >
           View official release
         </a>
+
       </div>
 
       <div class="preview">
-        <img src="assets/app-screen-1.jpg" alt="Daily Facts app screenshot">
+        <img
+          id="appScreenshot"
+          src="assets/app-screen-1.jpg"
+          alt="Daily Facts app screenshot"
+        >
       </div>
+
     </section>
 
     <footer>
-      <span>© <span id="year"></span> Daily Facts</span>
+
+      <span>
+        © <span id="year"></span> Daily Facts
+      </span>
 
       <span class="links">
-        <a href="https://github.com/creativeAnil/daily-facts-content/releases/tag/v1.0.9" target="_blank" rel="noopener">Release</a>
+
+        <a
+          id="footerRelease"
+          href="#"
+          target="_blank"
+          rel="noopener"
+        >
+          Release
+        </a>
+
         <span>·</span>
-        <a href="mailto:dailyfacts.support@gmail.com">Support</a>
+
+        <a href="mailto:dailyfacts.support@gmail.com">
+          Support
+        </a>
+
       </span>
+
     </footer>
+
   </main>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    /* Current year */
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    /* --------------------------------
+       Automatic screenshot slideshow
+       -------------------------------- */
+
+    const screenshots = [
+      "assets/app-screen-1.jpg",
+      "assets/app-screen-2.jpg",
+      "assets/app-screen-3.jpg",
+      "assets/app-screen-4.jpg",
+      "assets/app-screen-5.jpg"
+    ];
+
+    const screenshotImage =
+      document.getElementById("appScreenshot");
+
+    let screenshotIndex = 0;
+
+
+    /* Preload screenshots for smoother switching */
+    screenshots.forEach((src) => {
+      const image = new Image();
+      image.src = src;
+    });
+
+
+    /* Change screenshot every 3 seconds */
+    setInterval(() => {
+
+      screenshotImage.classList.add("changing");
+
+      setTimeout(() => {
+
+        screenshotIndex =
+          (screenshotIndex + 1) % screenshots.length;
+
+        screenshotImage.src =
+          screenshots[screenshotIndex];
+
+        screenshotImage.classList.remove("changing");
+
+      }, 400);
+
+    }, 3000);
+
+
+    /* --------------------------------
+       Automatic latest GitHub release
+       -------------------------------- */
+
+    const apiUrl =
+      "https://api.github.com/repos/creativeAnil/daily-facts-content/releases/latest";
+
+
+    async function loadLatestRelease() {
+
+      const versionElement =
+        document.getElementById("version");
+
+      const downloadButton =
+        document.getElementById("downloadButton");
+
+      const releaseLink =
+        document.getElementById("releaseLink");
+
+      const footerRelease =
+        document.getElementById("footerRelease");
+
+
+      try {
+
+        const response = await fetch(apiUrl, {
+          headers: {
+            "Accept": "application/vnd.github+json"
+          }
+        });
+
+
+        if (!response.ok) {
+          throw new Error("GitHub release request failed");
+        }
+
+
+        const release =
+          await response.json();
+
+
+        const version =
+          release.tag_name ||
+          release.name ||
+          "Unknown";
+
+
+        const apk =
+          release.assets.find(asset =>
+            asset.name
+              .toLowerCase()
+              .endsWith(".apk")
+          );
+
+
+        versionElement.textContent =
+          version;
+
+
+        releaseLink.href =
+          release.html_url;
+
+
+        footerRelease.href =
+          release.html_url;
+
+
+        if (apk) {
+
+          downloadButton.href =
+            apk.browser_download_url;
+
+        } else {
+
+          downloadButton.textContent =
+            "APK not available";
+
+          downloadButton.removeAttribute("href");
+
+        }
+
+
+      } catch (error) {
+
+        console.error(
+          "Unable to load latest release:",
+          error
+        );
+
+
+        versionElement.textContent =
+          "Unavailable";
+
+
+        downloadButton.textContent =
+          "Download unavailable";
+
+        downloadButton.removeAttribute("href");
+
+
+        const releasesUrl =
+          "https://github.com/creativeAnil/daily-facts-content/releases";
+
+
+        releaseLink.href =
+          releasesUrl;
+
+        footerRelease.href =
+          releasesUrl;
+
+      }
+
+    }
+
+
+    loadLatestRelease();
+
   </script>
+
 </body>
 </html>
