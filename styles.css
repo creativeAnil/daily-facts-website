@@ -12,9 +12,9 @@
 }
 
 
-/* --------------------------------
+/* =================================
    RESET
-   -------------------------------- */
+   ================================= */
 
 * {
   box-sizing: border-box;
@@ -27,7 +27,6 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-
   overflow-x: hidden;
 
   font-family:
@@ -60,19 +59,19 @@ textarea {
 }
 
 
-/* --------------------------------
+/* =================================
    BACKGROUND
-   -------------------------------- */
+   ================================= */
 
 .bg-orb {
   position: fixed;
 
-  width: 420px;
-  height: 420px;
+  width: 440px;
+  height: 440px;
 
   border-radius: 50%;
 
-  filter: blur(85px);
+  filter: blur(90px);
 
   pointer-events: none;
 
@@ -88,7 +87,7 @@ textarea {
 }
 
 .orb-2 {
-  right: -180px;
+  right: -190px;
   bottom: -220px;
 
   background:
@@ -97,7 +96,6 @@ textarea {
 
 .bg-grid {
   position: fixed;
-
   inset: 0;
 
   pointer-events: none;
@@ -115,14 +113,13 @@ textarea {
       transparent 1px
     );
 
-  background-size:
-    44px 44px;
+  background-size: 46px 46px;
 }
 
 
-/* --------------------------------
-   PAGE
-   -------------------------------- */
+/* =================================
+   MAIN PAGE
+   ================================= */
 
 .page {
   position: relative;
@@ -131,8 +128,8 @@ textarea {
 
   width:
     min(
-      1080px,
-      calc(100% - 40px)
+      1240px,
+      calc(100% - 64px)
     );
 
   min-height: 100vh;
@@ -140,24 +137,22 @@ textarea {
   margin: 0 auto;
 
   display: flex;
-
   flex-direction: column;
 }
 
 
-/* --------------------------------
+/* =================================
    TOP BAR
-   -------------------------------- */
+   ================================= */
 
 .topbar {
   display: flex;
 
-  justify-content: space-between;
-
   align-items: center;
 
-  padding:
-    22px 0;
+  justify-content: space-between;
+
+  padding: 24px 0;
 }
 
 .brand {
@@ -171,18 +166,18 @@ textarea {
 
   text-decoration: none;
 
-  font-size: 15px;
+  font-size: 16px;
 
   font-weight: 800;
 }
 
 .brand img {
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
 
   display: block;
 
-  border-radius: 10px;
+  border-radius: 11px;
 }
 
 .top-actions {
@@ -190,15 +185,14 @@ textarea {
 
   align-items: center;
 
-  gap: 8px;
+  gap: 9px;
 }
 
 .top-review,
 .top-download {
-  min-height: 38px;
+  min-height: 40px;
 
-  padding:
-    0 14px;
+  padding: 0 15px;
 
   border-radius: 999px;
 
@@ -211,7 +205,9 @@ textarea {
   text-decoration: none;
 
   transition:
-    transform 0.2s ease;
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .top-review {
@@ -219,8 +215,7 @@ textarea {
     1px solid
     rgba(245, 158, 11, 0.18);
 
-  color:
-    #a16207;
+  color: #a16207;
 
   background:
     rgba(255, 255, 255, 0.68);
@@ -243,7 +238,7 @@ textarea {
     );
 
   box-shadow:
-    0 8px 20px
+    0 9px 22px
     rgba(37, 99, 235, 0.18);
 }
 
@@ -253,40 +248,46 @@ textarea {
     translateY(-2px);
 }
 
+.top-download:hover {
+  box-shadow:
+    0 12px 25px
+    rgba(37, 99, 235, 0.24);
+}
 
-/* --------------------------------
-   HERO
-   -------------------------------- */
+
+/* =================================
+   HERO - DESKTOP
+   ================================= */
 
 .hero {
   flex: 1;
 
   min-height:
     calc(
-      100vh - 90px
+      100vh - 92px
     );
 
   display: grid;
 
   grid-template-columns:
-    minmax(0, 0.95fr)
-    minmax(350px, 0.75fr);
+    minmax(0, 1fr)
+    470px;
 
-  gap: 58px;
+  gap: 90px;
 
   align-items: center;
 
   padding:
-    24px 0 38px;
+    20px 0 45px;
 }
 
 
-/* --------------------------------
-   HERO COPY
-   -------------------------------- */
+/* =================================
+   LEFT CONTENT
+   ================================= */
 
 .hero-copy {
-  max-width: 560px;
+  max-width: 650px;
 }
 
 .badge {
@@ -297,9 +298,9 @@ textarea {
   gap: 8px;
 
   padding:
-    7px 11px;
+    8px 12px;
 
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 
   border:
     1px solid
@@ -311,7 +312,7 @@ textarea {
     #64748b;
 
   background:
-    rgba(255, 255, 255, 0.62);
+    rgba(255, 255, 255, 0.64);
 
   backdrop-filter:
     blur(10px);
@@ -343,15 +344,15 @@ h1 {
 
   font-size:
     clamp(
-      48px,
-      5.8vw,
-      68px
+      58px,
+      5vw,
+      74px
     );
 
-  line-height: 1.04;
+  line-height: 1.03;
 
   letter-spacing:
-    -0.05em;
+    -0.052em;
 
   font-weight: 850;
 }
@@ -364,9 +365,9 @@ h1 strong {
   background:
     linear-gradient(
       90deg,
-      #111827,
-      var(--blue),
-      var(--purple)
+      #111827 0%,
+      var(--blue) 58%,
+      var(--purple) 100%
     );
 
   -webkit-background-clip:
@@ -379,31 +380,32 @@ h1 strong {
 }
 
 .description {
-  max-width: 500px;
+  max-width: 550px;
 
   margin:
-    19px 0 0;
+    21px 0 0;
 
-  color: var(--muted);
+  color:
+    var(--muted);
 
-  font-size: 16px;
+  font-size: 17px;
 
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 
-/* --------------------------------
+/* =================================
    HERO BUTTONS
-   -------------------------------- */
+   ================================= */
 
 .hero-buttons {
   display: flex;
 
   flex-wrap: wrap;
 
-  gap: 10px;
+  gap: 11px;
 
-  margin-top: 24px;
+  margin-top: 26px;
 }
 
 .download-button,
@@ -414,7 +416,7 @@ h1 strong {
 
   gap: 11px;
 
-  min-height: 58px;
+  min-height: 60px;
 
   border-radius: 16px;
 
@@ -424,10 +426,10 @@ h1 strong {
 }
 
 .download-button {
-  min-width: 215px;
+  min-width: 225px;
 
   padding:
-    8px 17px 8px 10px;
+    8px 19px 8px 11px;
 
   color: #fff;
 
@@ -439,8 +441,8 @@ h1 strong {
     );
 
   box-shadow:
-    0 14px 30px
-    rgba(37, 99, 235, 0.22);
+    0 16px 32px
+    rgba(37, 99, 235, 0.21);
 
   transition:
     transform 0.2s ease,
@@ -452,14 +454,14 @@ h1 strong {
     translateY(-2px);
 
   box-shadow:
-    0 18px 34px
-    rgba(37, 99, 235, 0.26);
+    0 21px 38px
+    rgba(37, 99, 235, 0.27);
 }
 
 .download-icon,
 .review-icon {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
 
   display: flex;
 
@@ -467,7 +469,7 @@ h1 strong {
 
   justify-content: center;
 
-  border-radius: 11px;
+  border-radius: 12px;
 
   font-size: 18px;
 }
@@ -490,7 +492,7 @@ h1 strong {
 
 .download-text b,
 .review-text b {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .download-text small,
@@ -501,10 +503,10 @@ h1 strong {
 }
 
 .review-button {
-  min-width: 190px;
+  min-width: 198px;
 
   padding:
-    8px 16px 8px 10px;
+    8px 17px 8px 11px;
 
   border:
     1px solid
@@ -514,10 +516,10 @@ h1 strong {
     #475569;
 
   background:
-    rgba(255, 255, 255, 0.68);
+    rgba(255, 255, 255, 0.7);
 
   box-shadow:
-    0 10px 22px
+    0 10px 23px
     rgba(15, 23, 42, 0.05);
 
   transition:
@@ -530,22 +532,14 @@ h1 strong {
     translateY(-2px);
 
   box-shadow:
-    0 14px 26px
+    0 14px 27px
     rgba(15, 23, 42, 0.08);
 }
 
-.review-icon {
-  color:
-    #f59e0b;
 
-  background:
-    #fff5d7;
-}
-
-
-/* --------------------------------
+/* =================================
    FEATURES
-   -------------------------------- */
+   ================================= */
 
 .features {
   display: flex;
@@ -554,7 +548,7 @@ h1 strong {
 
   gap: 8px;
 
-  margin-top: 18px;
+  margin-top: 19px;
 }
 
 .features > div {
@@ -565,7 +559,7 @@ h1 strong {
   gap: 7px;
 
   padding:
-    7px 9px;
+    7px 10px;
 
   border:
     1px solid
@@ -577,7 +571,7 @@ h1 strong {
     #687386;
 
   background:
-    rgba(255, 255, 255, 0.52);
+    rgba(255, 255, 255, 0.55);
 
   font-size: 10px;
 
@@ -597,8 +591,6 @@ h1 strong {
   border-radius: 7px;
 
   font-size: 11px;
-
-  font-weight: 850;
 }
 
 .feature-icon.blue {
@@ -617,14 +609,14 @@ h1 strong {
 }
 
 
-/* --------------------------------
-   SHOWCASE
-   -------------------------------- */
+/* =================================
+   PHONE SHOWCASE
+   ================================= */
 
 .showcase {
   position: relative;
 
-  min-height: 610px;
+  min-height: 650px;
 
   display: flex;
 
@@ -636,17 +628,17 @@ h1 strong {
 .showcase-glow {
   position: absolute;
 
-  width: 400px;
-  height: 400px;
+  width: 470px;
+  height: 470px;
 
   border-radius: 50%;
 
   background:
     radial-gradient(
       circle,
-      rgba(37, 99, 235, 0.13),
-      rgba(99, 102, 241, 0.04) 45%,
-      transparent 72%
+      rgba(37, 99, 235, 0.14),
+      rgba(99, 102, 241, 0.045) 46%,
+      transparent 73%
     );
 
   animation:
@@ -656,10 +648,10 @@ h1 strong {
 .phone-shadow {
   position: absolute;
 
-  bottom: 56px;
+  bottom: 61px;
 
-  width: 260px;
-  height: 42px;
+  width: 270px;
+  height: 44px;
 
   border-radius: 50%;
 
@@ -675,11 +667,11 @@ h1 strong {
 
   z-index: 4;
 
-  width: 286px;
+  width: 310px;
 
   padding: 9px;
 
-  border-radius: 36px;
+  border-radius: 38px;
 
   background:
     linear-gradient(
@@ -689,17 +681,27 @@ h1 strong {
     );
 
   box-shadow:
-    0 28px 60px
-    rgba(15, 23, 42, 0.22),
+    0 30px 65px
+    rgba(15, 23, 42, 0.23),
     0 0 0 1px
     rgba(255, 255, 255, 0.06);
 
   transform:
-    perspective(1100px)
+    perspective(1150px)
     rotateY(-5deg);
 
   animation:
     floatPhone 5s ease-in-out infinite;
+
+  transition:
+    transform 0.45s ease;
+}
+
+.phone:hover {
+  transform:
+    perspective(1150px)
+    rotateY(0deg)
+    translateY(-5px);
 }
 
 .phone-notch {
@@ -708,8 +710,8 @@ h1 strong {
   top: 6px;
   left: 50%;
 
-  width: 80px;
-  height: 15px;
+  width: 84px;
+  height: 16px;
 
   transform:
     translateX(-50%);
@@ -726,7 +728,7 @@ h1 strong {
 .phone-screen {
   overflow: hidden;
 
-  border-radius: 28px;
+  border-radius: 30px;
 
   aspect-ratio:
     9 / 19.5;
@@ -757,9 +759,9 @@ h1 strong {
 }
 
 
-/* --------------------------------
+/* =================================
    FLOATING CARDS
-   -------------------------------- */
+   ================================= */
 
 .floating-card {
   position: absolute;
@@ -773,22 +775,22 @@ h1 strong {
   gap: 8px;
 
   padding:
-    9px 11px;
+    10px 12px;
 
   border:
     1px solid
     rgba(255, 255, 255, 0.78);
 
-  border-radius: 12px;
+  border-radius: 13px;
 
   background:
-    rgba(255, 255, 255, 0.76);
+    rgba(255, 255, 255, 0.78);
 
   backdrop-filter:
     blur(12px);
 
   box-shadow:
-    0 12px 26px
+    0 13px 28px
     rgba(15, 23, 42, 0.07);
 
   color:
@@ -797,27 +799,29 @@ h1 strong {
   font-size: 10px;
 
   font-weight: 750;
+
+  white-space: nowrap;
 }
 
 .floating-top {
-  top: 110px;
-  left: 5px;
+  top: 116px;
+  left: -12px;
 
   animation:
     floatCard 4.5s ease-in-out infinite;
 }
 
 .floating-bottom {
-  right: 5px;
-  bottom: 105px;
+  right: -8px;
+  bottom: 108px;
 
   animation:
     floatCard2 4.8s ease-in-out infinite;
 }
 
 .floating-symbol {
-  width: 24px;
-  height: 24px;
+  width: 25px;
+  height: 25px;
 
   display: flex;
 
@@ -832,8 +836,6 @@ h1 strong {
 
   background:
     #fff6dc;
-
-  font-size: 12px;
 }
 
 .online-dot {
@@ -851,14 +853,14 @@ h1 strong {
 }
 
 
-/* --------------------------------
-   SLIDER DOTS
-   -------------------------------- */
+/* =================================
+   DYNAMIC SLIDER DOTS
+   ================================= */
 
 .slider-dots {
   position: absolute;
 
-  bottom: 48px;
+  bottom: 47px;
   left: 50%;
 
   z-index: 8;
@@ -868,10 +870,28 @@ h1 strong {
 
   display: flex;
 
+  align-items: center;
+
+  justify-content: center;
+
   gap: 6px;
+
+  max-width: 220px;
+
+  padding: 5px 8px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.45);
+
+  backdrop-filter:
+    blur(8px);
 }
 
 .slider-dots button {
+  flex: 0 0 auto;
+
   width: 6px;
   height: 6px;
 
@@ -888,7 +908,16 @@ h1 strong {
 
   transition:
     width 0.22s ease,
-    background 0.22s ease;
+    background 0.22s ease,
+    transform 0.22s ease;
+}
+
+.slider-dots button:hover {
+  transform:
+    scale(1.25);
+
+  background:
+    #94a3b8;
 }
 
 .slider-dots button.active {
@@ -901,9 +930,9 @@ h1 strong {
 }
 
 
-/* --------------------------------
+/* =================================
    FOOTER
-   -------------------------------- */
+   ================================= */
 
 footer {
   padding:
@@ -930,6 +959,9 @@ footer a {
     #59657a;
 
   text-decoration: none;
+
+  transition:
+    color 0.2s ease;
 }
 
 footer a:hover {
@@ -938,9 +970,9 @@ footer a:hover {
 }
 
 
-/* --------------------------------
+/* =================================
    REVIEW MODAL
-   -------------------------------- */
+   ================================= */
 
 .review-overlay {
   position: fixed;
@@ -955,7 +987,7 @@ footer a:hover {
 
   justify-content: center;
 
-  padding: 18px;
+  padding: 20px;
 
   background:
     rgba(15, 23, 42, 0.48);
@@ -986,6 +1018,14 @@ footer a:hover {
       100%,
       410px
     );
+
+  max-height:
+    calc(
+      100vh - 40px
+    );
+
+  overflow-y:
+    auto;
 
   padding:
     25px;
@@ -1034,7 +1074,17 @@ footer a:hover {
 
   font-size: 23px;
 
+  line-height: 1;
+
   cursor: pointer;
+
+  transition:
+    background 0.2s ease;
+}
+
+.close-review:hover {
+  background:
+    #e2e8f0;
 }
 
 .review-header {
@@ -1081,6 +1131,11 @@ footer a:hover {
   font-size: 12px;
 }
 
+
+/* =================================
+   STAR RATING
+   ================================= */
+
 .stars {
   display: flex;
 
@@ -1107,10 +1162,27 @@ footer a:hover {
 
   font-size: 23px;
 
+  line-height: 1;
+
   cursor: pointer;
+
+  transition:
+    color 0.15s ease,
+    background 0.15s ease,
+    transform 0.15s ease;
 }
 
-.star:hover,
+.star:hover {
+  color:
+    #f59e0b;
+
+  background:
+    #fff5d7;
+
+  transform:
+    translateY(-2px);
+}
+
 .star.selected {
   color:
     #f59e0b;
@@ -1132,6 +1204,11 @@ footer a:hover {
 
   font-size: 11px;
 }
+
+
+/* =================================
+   REVIEW FORM
+   ================================= */
 
 .review-modal label {
   display: block;
@@ -1172,7 +1249,15 @@ footer a:hover {
   background:
     #f8fafc;
 
+  font-family:
+    inherit;
+
   font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .review-modal input {
@@ -1231,6 +1316,23 @@ footer a:hover {
   font-weight: 800;
 
   cursor: pointer;
+
+  box-shadow:
+    0 10px 22px
+    rgba(37, 99, 235, 0.16);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.send-review:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 14px 27px
+    rgba(37, 99, 235, 0.22);
 }
 
 .review-note {
@@ -1247,12 +1349,11 @@ footer a:hover {
 }
 
 
-/* --------------------------------
+/* =================================
    ANIMATIONS
-   -------------------------------- */
+   ================================= */
 
 @keyframes pulse {
-
   0%,
   100% {
     transform:
@@ -1272,25 +1373,23 @@ footer a:hover {
 }
 
 @keyframes floatPhone {
-
   0%,
   100% {
     transform:
-      perspective(1100px)
+      perspective(1150px)
       rotateY(-5deg)
       translateY(0);
   }
 
   50% {
     transform:
-      perspective(1100px)
+      perspective(1150px)
       rotateY(-5deg)
       translateY(-7px);
   }
 }
 
 @keyframes floatCard {
-
   0%,
   100% {
     transform:
@@ -1304,7 +1403,6 @@ footer a:hover {
 }
 
 @keyframes floatCard2 {
-
   0%,
   100% {
     transform:
@@ -1318,11 +1416,122 @@ footer a:hover {
 }
 
 
-/* --------------------------------
-   TABLET
-   -------------------------------- */
+/* =================================
+   LARGE DESKTOP
+   ================================= */
 
-@media (max-width: 900px) {
+@media (min-width: 1400px) {
+
+  .page {
+    width:
+      min(
+        1320px,
+        calc(100% - 90px)
+      );
+  }
+
+  .hero {
+    grid-template-columns:
+      minmax(0, 1fr)
+      500px;
+
+    gap:
+      110px;
+  }
+
+  .hero-copy {
+    max-width:
+      690px;
+  }
+
+  h1 {
+    font-size:
+      76px;
+  }
+
+  .description {
+    font-size:
+      18px;
+  }
+
+  .showcase {
+    min-height:
+      690px;
+  }
+
+  .phone {
+    width:
+      330px;
+  }
+
+  .showcase-glow {
+    width:
+      500px;
+
+    height:
+      500px;
+  }
+}
+
+
+/* =================================
+   TABLET
+   ================================= */
+
+@media (max-width: 1000px) {
+
+  .page {
+    width:
+      min(
+        1100px,
+        calc(100% - 40px)
+      );
+  }
+
+  .hero {
+    grid-template-columns:
+      minmax(0, 1fr)
+      390px;
+
+    gap:
+      45px;
+  }
+
+  .phone {
+    width:
+      285px;
+  }
+
+  .floating-top {
+    left:
+      -5px;
+  }
+
+  .floating-bottom {
+    right:
+      -5px;
+  }
+
+  .showcase-glow {
+    width:
+      400px;
+
+    height:
+      400px;
+  }
+}
+
+
+/* =================================
+   MOBILE / PHONE
+   ================================= */
+
+@media (max-width: 800px) {
+
+  .page {
+    width:
+      calc(100% - 28px);
+  }
 
   .hero {
     grid-template-columns:
@@ -1332,10 +1541,10 @@ footer a:hover {
       auto;
 
     gap:
-      25px;
+      26px;
 
     padding:
-      30px 0 40px;
+      24px 0 36px;
   }
 
   .hero-copy {
@@ -1377,35 +1586,60 @@ footer a:hover {
 
   .showcase {
     min-height:
-      590px;
+      580px;
+  }
+
+  .phone {
+    width:
+      min(
+        74vw,
+        290px
+      );
+  }
+
+  .showcase-glow {
+    width:
+      370px;
+
+    height:
+      370px;
   }
 
   .floating-top {
     left:
-      calc(50% - 215px);
+      0;
+
+    top:
+      62px;
   }
 
   .floating-bottom {
     right:
-      calc(50% - 210px);
+      0;
+
+    bottom:
+      68px;
+  }
+
+  .slider-dots {
+    bottom:
+      43px;
+
+    max-width:
+      180px;
   }
 }
 
 
-/* --------------------------------
-   MOBILE
-   -------------------------------- */
+/* =================================
+   SMALL PHONE
+   ================================= */
 
-@media (max-width: 600px) {
-
-  .page {
-    width:
-      calc(100% - 26px);
-  }
+@media (max-width: 560px) {
 
   .topbar {
     padding:
-      16px 0;
+      17px 0;
   }
 
   .top-review,
@@ -1417,14 +1651,9 @@ footer a:hover {
       10px;
   }
 
-  .hero {
-    padding-top:
-      20px;
-  }
-
   h1 {
     font-size:
-      46px;
+      45px;
   }
 
   .description {
@@ -1465,24 +1694,16 @@ footer a:hover {
     width:
       min(
         74vw,
-        290px
+        280px
       );
-
-    border-radius:
-      34px;
-  }
-
-  .phone-screen {
-    border-radius:
-      27px;
   }
 
   .showcase-glow {
     width:
-      350px;
+      340px;
 
     height:
-      350px;
+      340px;
   }
 
   .floating-card {
@@ -1509,13 +1730,56 @@ footer a:hover {
       62px;
   }
 
+  .slider-dots {
+    bottom:
+      38px;
+
+    padding:
+      4px 6px;
+
+    gap:
+      5px;
+
+    max-width:
+      155px;
+  }
+
+  .slider-dots button {
+    width:
+      5px;
+
+    height:
+      5px;
+  }
+
+  .slider-dots button.active {
+    width:
+      15px;
+  }
+
   footer {
     padding:
       12px 0 17px;
   }
 
+
+  /* Review popup */
+
   .review-modal {
+    max-height:
+      calc(
+        100vh - 28px
+      );
+
     padding:
       22px 16px;
+  }
+
+  .star {
+    width:
+      40px;
+
+    height:
+      40px;
   }
 }
